@@ -26,5 +26,16 @@ public class Main {
         System.out.println("Значение frog теперь = " + frog + ".");
         frog+=4;
         System.out.println("Значение frog теперь = " + frog + ".");
+        var firstBoxerWeight = 78.2;
+        var secondBoxerWeight = 82.7;
+        System.out.println("Общая масса бойцов: " + (firstBoxerWeight + secondBoxerWeight) + ".");
+        System.out.print("Разница между массами бойцов: ");
+        if (firstBoxerWeight > secondBoxerWeight) {
+            System.out.println(firstBoxerWeight - secondBoxerWeight + ".");
+        } else if (secondBoxerWeight > firstBoxerWeight) {
+            System.out.println(secondBoxerWeight - firstBoxerWeight + ".");
+        } else {
+            System.out.println("Их массы равны.");
+        }
     }
 }
