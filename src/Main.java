@@ -37,5 +37,14 @@ public class Main {
         } else {
             System.out.println("Их массы равны.");
         }
+        System.out.println("Решение задачи №7 вторым способом.");
+        System.out.print("Разница между массами бойцов: ");
+        if (firstBoxerWeight > secondBoxerWeight) {
+            System.out.println(firstBoxerWeight % secondBoxerWeight + ".");
+        } else if (secondBoxerWeight > firstBoxerWeight) {
+            System.out.println(secondBoxerWeight % firstBoxerWeight + ".");
+        } else {
+            System.out.println("Их массы равны.");
+        }
     }
 }
