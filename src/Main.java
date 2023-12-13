@@ -15,8 +15,16 @@ public class Main {
         var friend = 19;
         System.out.println("Значение friend = " + friend + ".");
         friend+= 2;
-        System.out.println("Значение friend = " + friend + ".");
+        System.out.println("Значение friend теперь = " + friend + ".");
         friend/= 7;
-        System.out.println("Значение friend = " + friend + ".");
+        System.out.println("Значение friend теперь = " + friend + ".");
+        var frog = 3.5;
+        System.out.println("Значение frog = " + frog + ".");
+        frog*=10;
+        System.out.println("Значение frog теперь = " + frog + ".");
+        frog/=3.5;
+        System.out.println("Значение frog теперь = " + frog + ".");
+        frog+=4;
+        System.out.println("Значение frog теперь = " + frog + ".");
     }
 }
