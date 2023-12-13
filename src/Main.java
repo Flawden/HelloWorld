@@ -1,6 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Привет, мир!!!"); //Помню. 3 восклицательных знака. Сделал.
-        System.out.println("Hello world!!!"); //И здесь тоже
+        var dog = 8.0;
+        var cat = 3.6;
+        var paper = 763789;
+        System.out.println("Значение dog = " + dog + ", значение cat = " + cat + ", значение paper = " + paper);
     }
 }
