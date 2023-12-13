@@ -12,6 +12,11 @@ public class Main {
         cat-=1.6;
         paper-=7639;
         System.out.println("Значение dog теперь = " + dog + ", значение cat = " + cat + ", а значение paper = " + paper + ".");
-
+        var friend = 19;
+        System.out.println("Значение friend = " + friend + ".");
+        friend+= 2;
+        System.out.println("Значение friend = " + friend + ".");
+        friend/= 7;
+        System.out.println("Значение friend = " + friend + ".");
     }
 }
