@@ -46,5 +46,10 @@ public class Main {
         } else {
             System.out.println("Их массы равны.");
         }
+        System.out.println("Если в компании каждый сотрудник посвещает работе 8 часов, " +
+                "а всего было выполнено работы на 640 часов, то:");
+        var allTheTime = 640;
+        var timeForOneWorker = 8;
+        System.out.println("Всего работников в компании — " + (allTheTime / timeForOneWorker) + " человек");
     }
 }
