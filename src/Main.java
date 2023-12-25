@@ -10,6 +10,8 @@ public class Main {
         lesson5();
         System.out.println();
         lesson6();
+        System.out.println();
+        lesson7();
     }
 
     private static void lesson1() {
@@ -141,5 +143,32 @@ public class Main {
         float weightOfDishTotalInKilograms = weightOfDishTotalInGrams / 1000;
 
         System.out.println("Итоговый вес блюда равен: " + weightOfDishTotalInKilograms + " кг");
+    }
+
+    private static void lesson7() {
+        // Задача 7:
+        /*
+        Правила соревнований обновились, и спортсмену, чтобы оставаться в своей весовой
+        категории, нужно сбросить 7 кг. Тренер скорректировал рацион так, чтобы спортсмен мог
+        терять в весе от 250 до 500 грамм в день.
+
+        Посчитайте, сколько дней уйдет на похудение, если спортсмен будет терять каждый день по 250 грамм, а сколько — если каждый день будет худеть на 500 грамм.
+        Посчитайте, сколько может потребоваться дней в среднем, чтобы добиться результата похудения.
+        Результаты всех подсчетов выведите в консоль.
+        */
+
+        int plannedWeightLossInKG = 7;
+        int plannedWeightLossInGram = 7 * 1000;
+
+        int minPlannedWeightLoss = 250;
+        int maxPlannedWeightLoss = 500;
+
+        float daysOfWeightLossWithMinimalEffort = (float) plannedWeightLossInGram / minPlannedWeightLoss;
+        float daysOfWeightLossWithMaximumEffort = (float) plannedWeightLossInGram / maxPlannedWeightLoss;
+        float daysOfWeightLossOnAverage = (float) plannedWeightLossInGram / ((float) (minPlannedWeightLoss + maxPlannedWeightLoss) / 2);
+
+        System.out.println("Дней похудения при минимальных усилиях: " + daysOfWeightLossWithMinimalEffort);
+        System.out.println("Дней похудения при максимальных усилиях: " + daysOfWeightLossWithMaximumEffort);
+        System.out.println("Дней похудения в среднем: " + daysOfWeightLossOnAverage);
     }
 }
