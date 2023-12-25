@@ -1,6 +1,7 @@
 public class Main {
     public static void main(String[] args) {
         lesson1();
+        lesson2();
     }
 
     private static void lesson1() {
@@ -18,4 +19,27 @@ public class Main {
         System.out.println("Значение переменной floatVariable с типом float равно " + floatVariable);
         System.out.println("Значение переменной doubleVariable с типом double равно " + doubleVariable);
     }
+
+    private static void lesson2() {
+        // Задача 2: Ниже дан список различных значений. Инициализируйте переменные, используйте изученные ранее типы переменных.
+
+        /* Значения:
+        27.12
+        987 678 965 549
+        2,786
+        569
+        -159
+        27897
+        67
+         */
+
+        float floatVariable = 27.12f;
+        long longVariable = 987678965549L;
+        float floatVariable2 = 2.786f;
+        short shortVariable = 569; //Ну или int.
+        short shortVariable2 = -159;
+        short shortVariable3 = 27897;
+        byte byteVariable = 67; // Полагаю это единственный случай. когда этот тип уместен.
+    }
+
 }
