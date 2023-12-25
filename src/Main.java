@@ -2,6 +2,7 @@ public class Main {
     public static void main(String[] args) {
         lesson1();
         lesson2();
+        lesson3();
     }
 
     private static void lesson1() {
@@ -42,4 +43,22 @@ public class Main {
         byte byteVariable = 67; // Полагаю это единственный случай. когда этот тип уместен.
     }
 
+    private static void lesson3() {
+        // Задача 2:
+        /*Три школьных учителя, Людмила Павловна, Анна Сергеевна и Екатерина Андреевна, ведут три класса.
+        У Людмилы Павловны — 23 ученика , у Анны Сергеевны — 27 учеников, у Екатерины Андреевны — 30 учеников.
+        Три учительницы закупили все вместе 480 листов бумаги на все три класса. Посчитайте, сколько достанется листов каждому ученику.
+        Результат задачи выведите в консоль в формате: «На каждого ученика рассчитано … листов бумаги». */
+
+        int ludmilaPavlovnasStudents = 23;
+        int annaSergeevnasStudents = 27;
+        int ecaterinaAndreevnaStudents = 30;
+
+        int totalStudents = ludmilaPavlovnasStudents + annaSergeevnasStudents + ecaterinaAndreevnaStudents;
+        int totalPappers = 480;
+
+        double pappersPerStudent =  (double) totalPappers / totalStudents;
+
+        System.out.println("На каждого ученика рассчитано " + pappersPerStudent + " листов бумаги");
+    }
 }
