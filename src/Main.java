@@ -8,6 +8,8 @@ public class Main {
         lesson4();
         System.out.println();
         lesson5();
+        System.out.println();
+        lesson6();
     }
 
     private static void lesson1() {
@@ -115,5 +117,29 @@ public class Main {
         System.out.println("4 * 30 = 120 (шт) Коричневой краски было куплено");
         int brownPaintTotal = 120;
         System.out.println("Ответ: В школе, где " + classesTotal + " классов, нужно " + whitePaintTotal + " банок белой краски и " + brownPaintTotal + " банок коричневой краски.");
+    }
+
+    private static void lesson6() {
+        // Задача 6:
+        /* Спортсмены следят за своим весом и тщательно относятся к тому, что и сколько они съедают.
+        Вот один из рецептов, по которому спортсмен готовит себе завтрак:
+                Бананы — 5 штук (1 банан — 80 грамм).
+                Молоко — 200 мл (100 мл = 105 грамм).
+                Мороженое-пломбир — 2 брикета по 100 грамм.
+                Яйца сырые – 4 яйца (1 яйцо — 70 грамм).
+                Смешать всё в блендере — и готово.
+        Подсчитайте вес (количество граммов) такого спортзавтрака, а затем переведите его в килограммы.
+                Результат в граммах и килограммах напечатайте в консоль. */
+
+        System.out.println("Дано: рецепт.");
+        int bananasWeightTotal = 5 * 80;
+        float milkWeightTotal = (float) 200 / 100 * 105;
+        int iceCreamWeightTotal = 2 * 100;
+        int eggsWeightTotal = 4 * 70;
+
+        float weightOfDishTotalInGrams = bananasWeightTotal + milkWeightTotal + iceCreamWeightTotal + eggsWeightTotal;
+        float weightOfDishTotalInKilograms = weightOfDishTotalInGrams / 1000;
+
+        System.out.println("Итоговый вес блюда равен: " + weightOfDishTotalInKilograms + " кг");
     }
 }
