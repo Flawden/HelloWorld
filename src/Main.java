@@ -2,7 +2,10 @@ public class Main {
     public static void main(String[] args) {
         lesson1();
         lesson2();
+        System.out.println();
         lesson3();
+        System.out.println();
+        lesson4();
     }
 
     private static void lesson1() {
@@ -60,5 +63,33 @@ public class Main {
         double pappersPerStudent =  (double) totalPappers / totalStudents;
 
         System.out.println("На каждого ученика рассчитано " + pappersPerStudent + " листов бумаги");
+    }
+
+    private static void lesson4() {
+        // Задача 2:
+        /* Производительность машины для изготовления бутылок — 16 бутылок за 2 минуты. Какая производительность машины будет:
+                за 20 минут,
+                в сутки,
+                за 3 дня,
+                за 1 месяц?
+                Рассчитывайте производительность работы машины в том случае, если она работает без перерыва заданный промежуток времени.
+                Результаты подсчетов выведите в консоль в формате: «За … машина произвела … штук бутылок».
+        Для объявления переменных не используйте тип var. */
+
+        int bottlesPerTwoMinutes = 16;
+        float bottlesPerMinute = (float) 16 / 2;
+        int bottlesPerTwentyMinutes = (int) (bottlesPerMinute * 20);
+        int bottlesPerDay = (int) (bottlesPerMinute * 60 * 24);
+        int bottlesPerThreeDays = bottlesPerDay * 3;
+        int bottlesPerMonth = bottlesPerDay * 30;
+        int bottlesPerMonthAnother = bottlesPerDay * 31;
+        int bottlesPerMonthOneMore = bottlesPerDay * 28;
+
+        System.out.println("За 20 минут машина произвела " + bottlesPerTwentyMinutes + " штук бутылок");
+        System.out.println("В сутки машина произвела " + bottlesPerDay + " штук бутылок");
+        System.out.println("За 3 дня машина произвела " + bottlesPerThreeDays + " штук бутылок");
+        System.out.println("За месяц машина произвела " + bottlesPerMonthOneMore + " штук бутылок (28 дневный месяц)");
+        System.out.println("За месяц машина произвела " + bottlesPerMonth + " штук бутылок (30 дневный месяц)");
+        System.out.println("За месяц машина произвела " + bottlesPerMonthAnother + " штук бутылок (31 дневный месяц)");
     }
 }
