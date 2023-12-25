@@ -12,6 +12,8 @@ public class Main {
         lesson6();
         System.out.println();
         lesson7();
+        System.out.println();
+        lesson8();
     }
 
     private static void lesson1() {
@@ -57,7 +59,8 @@ public class Main {
         /*Три школьных учителя, Людмила Павловна, Анна Сергеевна и Екатерина Андреевна, ведут три класса.
         У Людмилы Павловны — 23 ученика , у Анны Сергеевны — 27 учеников, у Екатерины Андреевны — 30 учеников.
         Три учительницы закупили все вместе 480 листов бумаги на все три класса. Посчитайте, сколько достанется листов каждому ученику.
-        Результат задачи выведите в консоль в формате: «На каждого ученика рассчитано … листов бумаги». */
+        Результат задачи выведите в консоль в формате: «На каждого ученика рассчитано … листов бумаги».
+        */
 
         int ludmilaPavlovnasStudents = 23;
         int annaSergeevnasStudents = 27;
@@ -80,7 +83,8 @@ public class Main {
                 за 1 месяц?
                 Рассчитывайте производительность работы машины в том случае, если она работает без перерыва заданный промежуток времени.
                 Результаты подсчетов выведите в консоль в формате: «За … машина произвела … штук бутылок».
-        Для объявления переменных не используйте тип var. */
+        Для объявления переменных не используйте тип var.
+        */
 
         int bottlesPerTwoMinutes = 16;
         float bottlesPerMinute = (float) 16 / 2;
@@ -103,7 +107,8 @@ public class Main {
         // Задача 5:
         /* На ремонт школы нужно 120 банок краски двух цветов: белой и коричневой. На один класс уходит 2 банки белой и 4 банки коричневой краски. Сколько банок каждой краски было куплено?
            Выведите результат задачи в консоль в формате: «В школе, где … классов, нужно … банок белой краски и … банок коричневой краски».
-           Для объявления переменных не используйте тип var. */
+           Для объявления переменных не используйте тип var.
+        */
 
         int totalBottleOfPaint = 180;
         int whitePaintPerClass = 2;
@@ -131,7 +136,8 @@ public class Main {
                 Яйца сырые – 4 яйца (1 яйцо — 70 грамм).
                 Смешать всё в блендере — и готово.
         Подсчитайте вес (количество граммов) такого спортзавтрака, а затем переведите его в килограммы.
-                Результат в граммах и килограммах напечатайте в консоль. */
+                Результат в граммах и килограммах напечатайте в консоль.
+         */
 
         System.out.println("Дано: рецепт.");
         int bananasWeightTotal = 5 * 80;
@@ -170,5 +176,39 @@ public class Main {
         System.out.println("Дней похудения при минимальных усилиях: " + daysOfWeightLossWithMinimalEffort);
         System.out.println("Дней похудения при максимальных усилиях: " + daysOfWeightLossWithMaximumEffort);
         System.out.println("Дней похудения в среднем: " + daysOfWeightLossOnAverage);
+    }
+
+    private static void lesson8() {
+        // Задача 8:
+        /*
+           Представим, что мы работаем в большой компании, штат которой состоит из нескольких сотен сотрудников. В компании есть правило: чем дольше сотрудник работает в компании, тем ценнее он для бизнеса. Поэтому сотрудники, которые работают в компании дольше 3 лет, получают повышение зарплаты раз в год. Каждый год повышение составляет 10% от текущей зарплаты.
+           К вам пришел руководитель с задачей автоматизировать повышение зарплаты, а также провести расчет для следующих сотрудников:
+                Маша получает 67 760 рублей в месяц.
+                Денис получает 83 690 рублей в месяц.
+                Кристина получает 76 230 рублей в месяц.
+                Каждому нужно увеличить зарплату на 10% от текущей месячной. Дополнительно руководитель попросил посчитать разницу между годовым доходом с нынешней зарплатой и после повышения.
+           Посчитайте, сколько будет получать каждый из сотрудников, а также разницу между годовым доходом до и после повышения.
+            Выведите в консоль информацию по каждому сотруднику. Например: «Маша теперь получает ... рублей. Годовой доход вырос на ... рублей».
+        */
+
+        double mariaSalary = 67760;
+        double denisSalary = 83690;
+        double kristinaSalary = 76230;
+
+        double mariaSalaryPerYear = mariaSalary * 12;
+        double denisSalaryPerYear = denisSalary * 12;
+        double kristinaSalaryPerYear = kristinaSalary * 12;
+
+        double mariaSalaryAfterPromition = mariaSalary * 1.1;
+        double denisSalaryAfterPromition = denisSalary * 1.1;
+        double kristinaSalaryAfterPromition = kristinaSalary * 1.1;
+
+        double mariaSalaryAfterPromitionPerYear = mariaSalaryAfterPromition * 12;
+        double denisSalaryAfterPromitionPerYear = denisSalaryAfterPromition * 12;
+        double kristinaSalaryAfterPromitionPerYear = kristinaSalaryAfterPromition * 12;
+
+        System.out.println("Маша теперь получает " + mariaSalaryAfterPromition + " рублей. Годовой доход вырос на " + (mariaSalaryAfterPromitionPerYear - mariaSalaryPerYear) +  " рублей");
+        System.out.println("Денис теперь получает " + denisSalaryPerYear + " рублей. Годовой доход вырос на " + (denisSalaryAfterPromitionPerYear - denisSalaryPerYear) +  " рублей");
+        System.out.println("Кристина теперь получает " + kristinaSalaryPerYear + " рублей. Годовой доход вырос на " + (kristinaSalaryAfterPromitionPerYear - kristinaSalaryPerYear) +  " рублей");
     }
 }
