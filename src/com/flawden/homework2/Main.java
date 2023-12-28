@@ -52,6 +52,14 @@ public class Main {
                 "а всего было выполнено работы на 640 часов, то:");
         var allTheTime = 640;
         var timeForOneWorker = 8;
-        System.out.println("Всего работников в компании — " + (allTheTime / timeForOneWorker) + " человек");
+        var workersTotal = allTheTime / timeForOneWorker;
+        System.out.println("Всего работников в компании — " + workersTotal + " человек");
+
+        var additionalEmployees = 94;
+        var workersAfterAdditional = additionalEmployees + workersTotal;
+        System.out.println("Если в компании работает на " + additionalEmployees + " работников больше, то:");
+        System.out.println("Время работы одного сотрудника все ещё " + timeForOneWorker + " часов. Новое число сотрудников " + workersAfterAdditional);
+        var allTheTimeAnother = timeForOneWorker * workersAfterAdditional;
+        System.out.println("Если в компании работает " + workersAfterAdditional + " человек, то всего " + allTheTimeAnother + " часов работы может быть поделено между сотрудниками");
     }
 }
