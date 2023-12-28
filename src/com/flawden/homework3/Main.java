@@ -2,23 +2,23 @@ package com.flawden.homework3;
 
 public class Main {
     public static void main(String[] args) {
-        lesson1();
-        lesson2();
+        task1();
+        task2();
         System.out.println();
-        lesson3();
+        task3();
         System.out.println();
-        lesson4();
+        task4();
         System.out.println();
-        lesson5();
+        task5();
         System.out.println();
-        lesson6();
+        task6();
         System.out.println();
-        lesson7();
+        task7();
         System.out.println();
-        lesson8();
+        task8();
     }
 
-    private static void lesson1() {
+    private static void task1() {
         // Задача 1: Объявите переменные типа int, byte, short, long, float, double.
         int intVariable = 2147483647;
         byte byteVariable = 127;
@@ -34,7 +34,7 @@ public class Main {
         System.out.println("Значение переменной doubleVariable с типом double равно " + doubleVariable);
     }
 
-    private static void lesson2() {
+    private static void task2() {
         // Задача 2: Ниже дан список различных значений. Инициализируйте переменные, используйте изученные ранее типы переменных.
 
         /* Значения:
@@ -56,7 +56,7 @@ public class Main {
         byte byteVariable = 67; // Полагаю это единственный случай. когда этот тип уместен.
     }
 
-    private static void lesson3() {
+    private static void task3() {
         // Задача 3:
         /*Три школьных учителя, Людмила Павловна, Анна Сергеевна и Екатерина Андреевна, ведут три класса.
         У Людмилы Павловны — 23 ученика , у Анны Сергеевны — 27 учеников, у Екатерины Андреевны — 30 учеников.
@@ -76,7 +76,7 @@ public class Main {
         System.out.println("На каждого ученика рассчитано " + pappersPerStudent + " листов бумаги");
     }
 
-    private static void lesson4() {
+    private static void task4() {
         // Задача 4:
         /* Производительность машины для изготовления бутылок — 16 бутылок за 2 минуты. Какая производительность машины будет:
                 за 20 минут,
@@ -105,7 +105,7 @@ public class Main {
         System.out.println("За месяц машина произвела " + bottlesPerMonthAnother + " штук бутылок (31 дневный месяц)");
     }
 
-    private static void lesson5() {
+    private static void task5() {
         // Задача 5:
         /* На ремонт школы нужно 120 банок краски двух цветов: белой и коричневой. На один класс уходит 2 банки белой и 4 банки коричневой краски. Сколько банок каждой краски было куплено?
            Выведите результат задачи в консоль в формате: «В школе, где … классов, нужно … банок белой краски и … банок коричневой краски».
@@ -128,7 +128,7 @@ public class Main {
         System.out.println("Ответ: В школе, где " + classesTotal + " классов, нужно " + whitePaintTotal + " банок белой краски и " + brownPaintTotal + " банок коричневой краски.");
     }
 
-    private static void lesson6() {
+    private static void task6() {
         // Задача 6:
         /* Спортсмены следят за своим весом и тщательно относятся к тому, что и сколько они съедают.
         Вот один из рецептов, по которому спортсмен готовит себе завтрак:
@@ -153,7 +153,7 @@ public class Main {
         System.out.println("Итоговый вес блюда равен: " + weightOfDishTotalInKilograms + " кг");
     }
 
-    private static void lesson7() {
+    private static void task7() {
         // Задача 7:
         /*
         Правила соревнований обновились, и спортсмену, чтобы оставаться в своей весовой
@@ -180,7 +180,7 @@ public class Main {
         System.out.println("Дней похудения в среднем: " + daysOfWeightLossOnAverage);
     }
 
-    private static void lesson8() {
+    private static void task8() {
         // Задача 8:
         /*
            Представим, что мы работаем в большой компании, штат которой состоит из нескольких сотен сотрудников. В компании есть правило: чем дольше сотрудник работает в компании, тем ценнее он для бизнеса. Поэтому сотрудники, которые работают в компании дольше 3 лет, получают повышение зарплаты раз в год. Каждый год повышение составляет 10% от текущей зарплаты.
