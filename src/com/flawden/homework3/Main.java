@@ -18,8 +18,8 @@ public class Main {
         task8();
     }
 
+    // Задача 1: Объявите переменные типа int, byte, short, long, float, double.
     private static void task1() {
-        // Задача 1: Объявите переменные типа int, byte, short, long, float, double.
         int intVariable = 2147483647;
         byte byteVariable = 127;
         short shortVariable = 32767;
