@@ -162,9 +162,9 @@ public class Main {
             System.out.println("нужно бы для начала родиться ");
         } else if (childAge < 5) {
             System.out.println("нельзя кататься на аттракционе");
-        } else if ((childAge == 5) || (childAge == 14)) {
+        } else if (childAge == 5) {
             System.out.println("придется подождать годик, ибо правила эту ситуацию не регламентируют");
-        } else if (childAge <= 14) {
+        } else if (childAge < 14) {
             System.out.println("можно кататься на аттракционе (в сопровождении взрослого)");
         } else {
             System.out.println("можно кататься на аттракционе (без сопровождения взрослого)");
@@ -203,7 +203,7 @@ public class Main {
     С помощью условного оператора и конструкции else напишите программу, которая вычисляет, какое из трех чисел бо́льшее, и выводит результат в консоль.
      */
     private static void task7(int one, int two, int three) {
-        System.out.println("Исходные числа равны: №1 = " + one + ", №2 = " + two + ", №3 =" + three + ".");
+        System.out.println("Исходные числа равны: №1 = " + one + ", №2 = " + two + ", №3 = " + three + ".");
         if (one == two) {
             if (three == two) {
                 System.out.println("Все 3 числа равны");
