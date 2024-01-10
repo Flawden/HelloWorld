@@ -88,9 +88,9 @@ public class Main {
             System.out.println("На улице " + temperatureInCelsius + " градусов. Нужно надеть шапку");
         } else if (temperatureInCelsius > 5) {
             System.out.println("Сегодня тепло, можно идти без шапки");
+            System.out.println("На улице " + temperatureInCelsius + " градусов. Можно идти без шапки.");
         } else {
             System.out.println("Температура равна 5 градусам. Мама не сказала что делать в такой ситуации.");
-            System.out.println("На улице " + temperatureInCelsius + " градусов. Можно идти без шапки.");
         }
     }
 
