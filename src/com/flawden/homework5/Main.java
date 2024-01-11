@@ -197,6 +197,7 @@ public class Main {
             case 7:
             case 8:
                 System.out.println("Указанный месяц является летним");
+                break;
             case 9:
             case 10:
             case 11:
@@ -204,6 +205,7 @@ public class Main {
                 break;
             default:
                 System.out.println("Ошибка! Ваш месяц не существует. Просим вас использовать только месяца Григорианского календаря.");
+                break;
         }
     }
 }
