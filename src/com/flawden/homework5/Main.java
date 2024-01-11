@@ -96,7 +96,7 @@ public class Main {
      */
     private static void task2(int clientOS, int clientDeviceYear) {
         //Пусть OS определяется по правилам, как в первой задаче (IOS - O, Android - 1)
-        if ((clientDeviceYear < 2015) || (clientOS > 1)) {
+        if (clientDeviceYear < 2015 || clientOS > 1) {
             task1(clientOS);
         } else {
             switch (clientOS) {
@@ -128,9 +128,9 @@ public class Main {
         try {
             Thread.sleep(200);
         } catch (InterruptedException e) {
-            System.out.println("Если вы видите это сообщение, то оно многопоточное.");
+            System.out.println("Если вы видите это сообщение, то данное приложение является многопоточным.");
         }
-        if(((year % 4) == 0) && ((year % 100 != 0))) {
+        if ((year % 4 == 0  &&  year % 100 != 0  ) || ( year % 400 == 0 )) {
             System.out.println(year + " год является високосным");
         } else {
             System.out.println(year + " год не является високосным");
