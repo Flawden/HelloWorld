@@ -2,7 +2,16 @@ package com.flawden.homework6;
 
 public class Main {
     public static void main(String[] args) {
-
+        task1();
+        System.out.println();
+        task2();
+        System.out.println();
+        task3();
+        System.out.println();
+        task4();
+        System.out.println();
+        task5();
+        System.out.println();
     }
 
     /*
@@ -10,7 +19,9 @@ public class Main {
     С помощью цикла for выведите в консоль все числа от 1 до 10.
      */
     private static void task1() {
-
+        for (int i = 1; i <= 10; i++) {
+            System.out.print(i + " ");
+        }
     }
 
     /*
@@ -18,7 +29,9 @@ public class Main {
     С помощью цикла for выведите в консоль все числа от 10 до 1.
      */
     private static void task2() {
-
+        for (int i = 10; i > 0; i--) {
+            System.out.print(i + " ");
+        }
     }
 
     /*
@@ -26,7 +39,9 @@ public class Main {
     Выведите в консоль все четные числа от 0 до 17.
      */
     private static void task3() {
-
+        for (int i = 0; i <= 17; i+=2) {
+            System.out.print(i + " ");
+        }
     }
 
     /*
@@ -34,7 +49,9 @@ public class Main {
     Выведите в консоль все числа от 10 до −10 от бо́льшего числа к меньшему.
      */
     private static void task4() {
-
+        for (int i = 10; i >= -10; i--) {
+            System.out.print(i + " ");
+        }
     }
 
     /*
@@ -44,7 +61,11 @@ public class Main {
     «… год является високосным».
      */
     private static void task5() {
-
+        for (int year = 1904; year <=2096; year++) {
+            if ((year % 4 == 0  &&  year % 100 != 0  ) || ( year % 400 == 0 )) {
+                System.out.println(year + " год является високосным");
+            }
+        }
     }
 
     /*
