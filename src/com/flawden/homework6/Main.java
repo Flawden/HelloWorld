@@ -12,6 +12,8 @@ public class Main {
         System.out.println();
         task5();
         System.out.println();
+        task6();
+        System.out.println();
     }
 
     /*
@@ -74,7 +76,9 @@ public class Main {
     7 14 21 28 35 42 49 56 63 70 77 84 91 98
      */
     private static void task6() {
-
+        for (int i = 7; i <= 98; i+=7) {
+            System.out.print(i + " ");
+        }
     }
 
     /*
