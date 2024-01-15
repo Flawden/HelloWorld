@@ -21,6 +21,12 @@ public class Main {
         task8(0);
         task8(10);
         System.out.println();
+        task9(1);
+        task9(-1);
+        task9(0);
+        task9(10);
+        System.out.println();
+        task10();
     }
 
     /*
@@ -111,11 +117,12 @@ public class Main {
             System.out.println("Откладывать допускается на срок от одного месяца");
         }
         if (month < 0) {
-            int money = 0;
+            double money = 0;
             for (int i = -1; i >= month; i--) {
                 money-=29_000;
             }
             System.out.println("С вас " + (money * -1) + " рублей");
+            return;
         }
         System.out.println("Откладываемая сумма равна: 29 000");
         System.out.println("Колличество месяцев: " + month);
@@ -132,8 +139,24 @@ public class Main {
     а в банк под проценты — 12% годовых. Выведите сумму накоплений за каждый месяц в консоль в
     формате: «Месяц …, сумма накоплений равна … рублей».
      */
-    private static void task9() {
-
+    private static void task9(int month) {
+        double money = 0D;
+        if(month == 0) {
+            System.out.println("Откладывать допускается на срок от одного месяца");
+        }
+        if (month < 0) {
+            for (int i = -1; i >= month; i--) {
+                money-=29_000 * 1.12;
+            }
+            System.out.println("С вас " + (money * -1) + " рублей");
+            return;
+        }
+        System.out.println("Откладываемая сумма равна: 29 000");
+        System.out.println("Колличество месяцев: " + month);
+        for (int i = 1; i <= month; i++) {
+            money+=29_000 * 1.12;
+            System.out.println("Месяц " + i + ", сумма накоплений равна " + money + " рублей.");
+        }
     }
 
     /*
@@ -151,6 +174,8 @@ public class Main {
     2*10=20
      */
     private static void task10() {
-
+        for(int i = 1; i <=10; i++) {
+            System.out.println("2*" + i + "=" + (2*i));
+        }
     }
 }
