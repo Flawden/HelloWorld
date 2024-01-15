@@ -14,6 +14,8 @@ public class Main {
         System.out.println();
         task6();
         System.out.println();
+        task7();
+        System.out.println();
     }
 
     /*
@@ -87,7 +89,9 @@ public class Main {
     1 2 4 8 16 32 64 128 256 512
      */
     private static void task7() {
-
+        for (int i = 1; i <= 512; i*=2) {
+            System.out.print(i + " ");
+        }
     }
 
     /*
