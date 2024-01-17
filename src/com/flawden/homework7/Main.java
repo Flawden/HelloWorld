@@ -177,7 +177,7 @@ public class Main {
         }
         int numberOfDaysInTheMonth = 31;
         for(int today = dayOfTheFirstFriday;today <= numberOfDaysInTheMonth; today += 7) {
-            System.out.println("Сегожня пятница, " + today + "-е число. Необходимо подготовить отчет");
+            System.out.println("Сегодня пятница, " + today + "-е число. Необходимо подготовить отчет");
         }
 
     }
