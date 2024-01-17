@@ -12,6 +12,8 @@ public class Main {
         task4(1);
         System.out.println();
         task5();
+        System.out.println();
+        task6();
     }
 
     /*
@@ -121,7 +123,15 @@ public class Main {
     9 лет.
      */
     private static void task6() {
-
+        double budget = 15_000D;
+        int yearsToSaveMoney = 9;
+        int monthsToSaveMoney = yearsToSaveMoney * 12;
+        for (int counter = 1; counter <= monthsToSaveMoney; counter++) {
+            budget*=1.07;
+            if (counter % 6 == 0) {
+                System.out.printf("Месяц номер %d, текущая сумма накоплений равна %.2f\n", counter, budget);
+            }
+        }
     }
 
     /*
