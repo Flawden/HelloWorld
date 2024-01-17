@@ -3,7 +3,7 @@ package com.flawden.homework7;
 public class Main {
 
     public static void main(String[] args) {
-
+        task1(2_459_000D, 15000D);
     }
 
     /*
@@ -17,8 +17,14 @@ public class Main {
     необходимо для накопления данной суммы. Формат сообщения: «Месяц …, сумма накоплений
     равна … рублей» .
      */
-    private static void task1() {
-
+    private static void task1(double plannedTotalMoney, double onePayment) {
+        double money = 0D;
+        int counter = 0;
+        while (money <= plannedTotalMoney) {
+            money += onePayment;
+            counter++;
+        }
+        System.out.println("Месяц " + counter + ", сумма накоплений равна " + money + " рублей.");
     }
 
     /*
