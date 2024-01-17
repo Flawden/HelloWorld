@@ -9,7 +9,9 @@ public class Main {
         System.out.println();
         task3();
         System.out.println();
-        task4();
+        task4(1);
+        System.out.println();
+        task5();
     }
 
     /*
@@ -86,16 +88,18 @@ public class Main {
     всегда равен 7%.
     Выведите в консоль результат программы с указанием суммы накоплений по каждому месяцу.
      */
-    private static void task4() {
+    private static void task4(int multiplicity) {
         double plannedTotalMoney = 12_000_000D;
         double budget = 15_000D;
         int counter = 1;
-
         while (budget < plannedTotalMoney) {
             budget*= 1.07;
-            System.out.printf("Месяц номер %o, текущая сумма накоплений равна %.2f\n", counter, budget);
+            if (counter % multiplicity == 0) {
+                System.out.printf("Месяц номер %d, текущая сумма накоплений равна %.2f\n", counter, budget);
+            }
             counter++;
         }
+        System.out.println("\nИтоговое время накоплений: " + counter);
     }
 
     /*
@@ -105,7 +109,7 @@ public class Main {
     месяцы.
      */
     private static void task5() {
-
+        task4(6);
     }
 
     /*
