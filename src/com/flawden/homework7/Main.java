@@ -4,7 +4,10 @@ public class Main {
 
     public static void main(String[] args) {
         task1(2_459_000D, 15000D);
+        System.out.println();
         task2();
+        System.out.println();
+        task3();
     }
 
     /*
@@ -59,7 +62,17 @@ public class Main {
     населения составляет …».
      */
     private static void task3() {
+        //Пусть смертность 8 человек также на каждую 1000.
+        //Пусть показатели смертности даны за 1 год.
+        int population = 12_000_000;
+        int birthRatePerThousand = 17;
+        int mortalityRatePerThousand = 8;
+        int birthMortalityPerThousandDelta = birthRatePerThousand - mortalityRatePerThousand;
 
+        for (int year = 1; year <= 10; year++) {
+            population = population + (birthMortalityPerThousandDelta * (population / 1000));
+            System.out.println("Год " + year + ", численность населения составляет " + population);
+        }
     }
 
     /*
