@@ -8,6 +8,8 @@ public class Main {
         task2();
         System.out.println();
         task3();
+        System.out.println();
+        task4();
     }
 
     /*
@@ -85,7 +87,15 @@ public class Main {
     Выведите в консоль результат программы с указанием суммы накоплений по каждому месяцу.
      */
     private static void task4() {
+        double plannedTotalMoney = 12_000_000D;
+        double budget = 15_000D;
+        int counter = 1;
 
+        while (budget < plannedTotalMoney) {
+            budget*= 1.07;
+            System.out.printf("Месяц номер %o, текущая сумма накоплений равна %.2f\n", counter, budget);
+            counter++;
+        }
     }
 
     /*
