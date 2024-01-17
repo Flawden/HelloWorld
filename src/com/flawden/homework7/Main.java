@@ -1,5 +1,7 @@
 package com.flawden.homework7;
 
+import java.util.Calendar;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -35,6 +37,7 @@ public class Main {
         System.out.println();
         task7(8);
         System.out.println();
+        task8();
     }
 
     /*
@@ -195,7 +198,18 @@ public class Main {
         -2054
      */
     private static void task8() {
-
+        Calendar calendar = Calendar.getInstance();
+        int ourYear = calendar.getWeekYear();
+        int twoHundredYearBefore = ourYear - 200;
+        int oneHundredYearAfter = ourYear + 100;
+        int cometAppearance = 0;
+        int cometAppearanceRate = 79;
+        while (cometAppearance < oneHundredYearAfter) {
+            if (cometAppearance > twoHundredYearBefore) {
+                System.out.println(cometAppearance);
+            }
+            cometAppearance+=cometAppearanceRate;
+        }
     }
 
 }
