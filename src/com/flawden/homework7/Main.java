@@ -14,6 +14,27 @@ public class Main {
         task5();
         System.out.println();
         task6();
+        System.out.println();
+        task7(-3);
+        System.out.println();
+        task7(0);
+        System.out.println();
+        task7(1);
+        System.out.println();
+        task7(2);
+        System.out.println();
+        task7(3);
+        System.out.println();
+        task7(4);
+        System.out.println();
+        task7(5);
+        System.out.println();
+        task7(6);
+        System.out.println();
+        task7(7);
+        System.out.println();
+        task7(8);
+        System.out.println();
     }
 
     /*
@@ -146,7 +167,15 @@ public class Main {
     В нашем месяце 31 день. В результате у вас должно получиться от 4 до 5 сообщений с
     напоминаниями по разным датам.
      */
-    private static void task7() {
+    private static void task7(int dayOfTheFirstFriday) {
+        if (dayOfTheFirstFriday > 7  || dayOfTheFirstFriday < 1) {
+            System.out.println("Мы имеем дело с семидневной неделей.");
+            return;
+        }
+        int numberOfDaysInTheMonth = 31;
+        for(int today = dayOfTheFirstFriday;today <= numberOfDaysInTheMonth; today += 7) {
+            System.out.println("Сегожня пятница, " + today + "-е число. Необходимо подготовить отчет");
+        }
 
     }
 
