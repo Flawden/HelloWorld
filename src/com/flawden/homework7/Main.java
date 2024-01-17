@@ -4,6 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         task1(2_459_000D, 15000D);
+        task2();
     }
 
     /*
@@ -38,7 +39,14 @@ public class Main {
     10 9 8 7 6 5 4 3 2 1
      */
     private static void task2() {
-
+        int counter = 1;
+        for (;counter <= 10;counter++) {
+            System.out.print(counter + " ");
+        }
+        System.out.println();
+        while (counter > 1) {
+            System.out.print(--counter + " ");
+        }
     }
 
     /*
