@@ -1,9 +1,18 @@
 package com.flawden.homework8;
 
+import java.util.Arrays;
+import java.util.Random;
+
 public class Main {
 
     public static void main(String[] args) {
-
+    task1();
+    System.out.println();
+    task2();
+    System.out.println();
+    task3();
+    System.out.println();
+    task4();
     }
 
     /*
@@ -17,7 +26,16 @@ public class Main {
         способ создания массива: с помощью ключевого слова или сразу заполненный элементами.
      */
     private static void task1() {
-
+        int[] intArray = new int[3];
+        for (int i = 0; i < intArray.length; i++) {
+            intArray[i] = i + 1;
+        }
+        double[] doubleArray = new double[]{1.57, 7.654, 9.986};
+        Random random = new Random();
+        int[] myOwnArray = new int[3];
+        for (int i = 0; i < 3; i++) {
+            myOwnArray[i] = random.nextInt(1, 10);
+        }
     }
 
     /*
