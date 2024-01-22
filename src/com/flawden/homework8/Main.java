@@ -8,9 +8,12 @@ import java.util.Random;
 public class Main {
 
     private static Random random = new Random();
+    private static int[] intArray;
+    private static double[] doubleArray;
+    private static int[] myOwnArray;
 
     public static void main(String[] args) {
-    task1(1);
+    task1();
     System.out.println();
     task2();
     System.out.println();
@@ -29,26 +32,15 @@ public class Main {
         -Произвольный массив. Тип и количество данных определите сами. Самостоятельно выберите
         способ создания массива: с помощью ключевого слова или сразу заполненный элементами.
      */
-    private static void task1(int taskNum) {
-        int[] intArray = new int[3];
+    private static void task1() {
+        intArray = new int[3];
         for (int i = 0; i < intArray.length; i++) {
             intArray[i] = i + 1;
         }
-        double[] doubleArray = new double[]{1.57, 7.654, 9.986};
-        int[] myOwnArray = new int[3];
+        doubleArray = new double[]{1.57, 7.654, 9.986};
+        myOwnArray = new int[3];
         for (int i = 0; i < 3; i++) {
             myOwnArray[i] = random.nextInt(1, 10);
-        }
-        switch (taskNum) {
-            case 2:
-                arraysPrinter(intArray);
-                arraysPrinter(doubleArray);
-                arraysPrinter(myOwnArray);
-                break;
-            case 3:
-                arraysPrinterReverse(intArray);
-                arraysPrinterReverse(doubleArray);
-                arraysPrinterReverse(myOwnArray);
         }
     }
 
@@ -58,7 +50,9 @@ public class Main {
     В конце строки запятую ставить не надо.
      */
     private static void task2() {
-        task1(2);
+        arraysPrinter(intArray);
+        arraysPrinter(doubleArray);
+        arraysPrinter(myOwnArray);
     }
 
     private static void arraysPrinter(int[] intArray) {
@@ -86,7 +80,9 @@ public class Main {
         (Произвольные элементы третьего массива в обратном порядке)
      */
     private static void task3() {
-        task1(3);
+        arraysPrinterReverse(intArray);
+        arraysPrinterReverse(doubleArray);
+        arraysPrinterReverse(myOwnArray);
     }
 
 
