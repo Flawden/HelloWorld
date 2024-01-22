@@ -1,9 +1,13 @@
 package com.flawden.homework8;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class Main {
+
+    private static Random random = new Random();
 
     public static void main(String[] args) {
     task1(1);
@@ -31,7 +35,6 @@ public class Main {
             intArray[i] = i + 1;
         }
         double[] doubleArray = new double[]{1.57, 7.654, 9.986};
-        Random random = new Random();
         int[] myOwnArray = new int[3];
         for (int i = 0; i < 3; i++) {
             myOwnArray[i] = random.nextInt(1, 10);
@@ -113,7 +116,27 @@ public class Main {
     Распечатайте результат преобразования в консоль.
      */
     private static void task4() {
-
+        int[] startArray = new int[20];
+        for (int i = 0; i < 20; i++) {
+            startArray[i] = random.nextInt(1,100);
+        }
+        System.out.println("Изначальный массив: " + Arrays.toString(startArray));
+        List<String> onlyChangedValues = new ArrayList<>();
+        int[] endArray = new int[20];
+        for (int i = 0; i < 20; i++) {
+            if (startArray[i] % 2 != 0) {
+                onlyChangedValues.add("Число под номером: " + i + ", и значением: " + startArray[i]);
+                endArray[i] = startArray[i] + 1;
+            } else {
+                endArray[i] = startArray[i];
+            }
+        }
+        System.out.println("Пуф!");
+        System.out.println("Конечный массив: " + Arrays.toString(endArray));
+        System.out.println("Были изменены следующие числа");
+        for (String s: onlyChangedValues) {
+            System.out.println(s);
+        }
     }
 
 }
