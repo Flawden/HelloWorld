@@ -1,12 +1,14 @@
 package com.flawden.homework8;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) {
-    task1();
+    task1(false);
     System.out.println();
     task2();
     System.out.println();
@@ -25,7 +27,7 @@ public class Main {
         -Произвольный массив. Тип и количество данных определите сами. Самостоятельно выберите
         способ создания массива: с помощью ключевого слова или сразу заполненный элементами.
      */
-    private static void task1() {
+    private static void task1(boolean isItTask2) {
         int[] intArray = new int[3];
         for (int i = 0; i < intArray.length; i++) {
             intArray[i] = i + 1;
@@ -36,14 +38,30 @@ public class Main {
         for (int i = 0; i < 3; i++) {
             myOwnArray[i] = random.nextInt(1, 10);
         }
+        if(isItTask2) {
+            arraysPrinter(intArray);
+            arraysPrinter(doubleArray);
+            arraysPrinter(myOwnArray);
+        }
     }
 
     /*
     Задача 2
-    Распечатайте на отдельной строчке элементы каждого массива по порядку через запятую. В конце строки запятую ставить не надо.
+    Распечатайте на отдельной строчке элементы каждого массива по порядку через запятую.
+    В конце строки запятую ставить не надо.
      */
     private static void task2() {
+        task1(true);
+    }
 
+    private static void arraysPrinter(int[] intArray) {
+        String textToOutput = Arrays.toString(intArray);
+        System.out.println(textToOutput.substring(1, textToOutput.length()-1));
+    }
+
+    private static void arraysPrinter(double[] doubleArray) {
+        String textToOutput = Arrays.toString(doubleArray);
+        System.out.println(textToOutput.substring(1, textToOutput.length()-1));
     }
 
     /*
