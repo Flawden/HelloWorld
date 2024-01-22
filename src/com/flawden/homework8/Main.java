@@ -1,14 +1,12 @@
 package com.flawden.homework8;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) {
-    task1(false);
+    task1(1);
     System.out.println();
     task2();
     System.out.println();
@@ -27,7 +25,7 @@ public class Main {
         -Произвольный массив. Тип и количество данных определите сами. Самостоятельно выберите
         способ создания массива: с помощью ключевого слова или сразу заполненный элементами.
      */
-    private static void task1(boolean isItTask2) {
+    private static void task1(int taskNum) {
         int[] intArray = new int[3];
         for (int i = 0; i < intArray.length; i++) {
             intArray[i] = i + 1;
@@ -38,10 +36,16 @@ public class Main {
         for (int i = 0; i < 3; i++) {
             myOwnArray[i] = random.nextInt(1, 10);
         }
-        if(isItTask2) {
-            arraysPrinter(intArray);
-            arraysPrinter(doubleArray);
-            arraysPrinter(myOwnArray);
+        switch (taskNum) {
+            case 2:
+                arraysPrinter(intArray);
+                arraysPrinter(doubleArray);
+                arraysPrinter(myOwnArray);
+                break;
+            case 3:
+                arraysPrinterReverse(intArray);
+                arraysPrinterReverse(doubleArray);
+                arraysPrinterReverse(myOwnArray);
         }
     }
 
@@ -51,7 +55,7 @@ public class Main {
     В конце строки запятую ставить не надо.
      */
     private static void task2() {
-        task1(true);
+        task1(2);
     }
 
     private static void arraysPrinter(int[] intArray) {
@@ -79,9 +83,27 @@ public class Main {
         (Произвольные элементы третьего массива в обратном порядке)
      */
     private static void task3() {
-
+        task1(3);
     }
 
+
+    private static void arraysPrinterReverse(int[] intArray) {
+        int[] intArrayReverse = new int[intArray.length];
+        for (int i = 0; i < intArray.length; i++) {
+            intArrayReverse[intArray.length-i-1] = intArray[i];
+        }
+        String textToOutput = Arrays.toString(intArrayReverse);
+        System.out.println(textToOutput.substring(1, textToOutput.length()-1));
+    }
+
+    private static void arraysPrinterReverse(double[] doubleArray) {
+        double[] doubleArrayReverse = new double[doubleArray.length];
+        for (int i = 0; i < doubleArray.length; i++) {
+            doubleArrayReverse[doubleArray.length-i-1] = doubleArray[i];
+        }
+        String textToOutput = Arrays.toString(doubleArrayReverse);
+        System.out.println(textToOutput.substring(1, textToOutput.length()-1));
+    }
     /*
     Задача 4
     Пройдитесь по первому целочисленному массиву и все нечетные числа в нем сделайте четными
