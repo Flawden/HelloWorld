@@ -7,19 +7,16 @@ import java.util.Random;
 
 public class Main {
 
-    private static Random random = new Random();
-    private static int[] intArray;
-    private static double[] doubleArray;
-    private static int[] myOwnArray;
+    //Поля переехали в методы
 
     public static void main(String[] args) {
-    task1();
-    System.out.println();
-    task2();
-    System.out.println();
-    task3();
-    System.out.println();
-    task4();
+        task1();
+        System.out.println();
+        task2();
+        System.out.println();
+        task3();
+        System.out.println();
+        task4();
     }
 
     /*
@@ -33,12 +30,13 @@ public class Main {
         способ создания массива: с помощью ключевого слова или сразу заполненный элементами.
      */
     private static void task1() {
-        intArray = new int[3];
+        Random random = new Random();
+        int[] intArray = new int[3];
         for (int i = 0; i < intArray.length; i++) {
             intArray[i] = i + 1;
         }
-        doubleArray = new double[]{1.57, 7.654, 9.986};
-        myOwnArray = new int[3];
+        double[] doubleArray = new double[]{1.57, 7.654, 9.986};
+        int[] myOwnArray = new int[3];
         for (int i = 0; i < 3; i++) {
             myOwnArray[i] = random.nextInt(1, 10);
         }
@@ -50,6 +48,16 @@ public class Main {
     В конце строки запятую ставить не надо.
      */
     private static void task2() {
+        Random random = new Random();
+        int[] intArray = new int[3];
+        for (int i = 0; i < intArray.length; i++) {
+            intArray[i] = i + 1;
+        }
+        double[] doubleArray = new double[]{1.57, 7.654, 9.986};
+        int[] myOwnArray = new int[3];
+        for (int i = 0; i < 3; i++) {
+            myOwnArray[i] = random.nextInt(0, 10);
+        }
         arraysPrinter(intArray);
         arraysPrinter(doubleArray);
         arraysPrinter(myOwnArray);
@@ -60,9 +68,15 @@ public class Main {
         System.out.println(textToOutput.substring(1, textToOutput.length()-1));
     }
 
+    /*
+    Стандартный вызов Arrays.toString() добавляет квадратные скобки в начало и в конец
+    По данной причине я начинаю с 1.
+    Если ставлю 0, то вывод следующий: [1.57, 7.654, 9.986
+     */
     private static void arraysPrinter(double[] doubleArray) {
         String textToOutput = Arrays.toString(doubleArray);
         System.out.println(textToOutput.substring(1, textToOutput.length()-1));
+
     }
 
     /*
@@ -80,6 +94,16 @@ public class Main {
         (Произвольные элементы третьего массива в обратном порядке)
      */
     private static void task3() {
+        Random random = new Random();
+        int[] intArray = new int[3];
+        for (int i = 0; i < intArray.length; i++) {
+            intArray[i] = i + 1;
+        }
+        double[] doubleArray = new double[]{1.57, 7.654, 9.986};
+        int[] myOwnArray = new int[3];
+        for (int i = 0; i < 3; i++) {
+            myOwnArray[i] = random.nextInt(1, 10);
+        }
         arraysPrinterReverse(intArray);
         arraysPrinterReverse(doubleArray);
         arraysPrinterReverse(myOwnArray);
@@ -112,6 +136,7 @@ public class Main {
     Распечатайте результат преобразования в консоль.
      */
     private static void task4() {
+        Random random = new Random();
         int[] startArray = new int[20];
         for (int i = 0; i < 20; i++) {
             startArray[i] = random.nextInt(1,100);
