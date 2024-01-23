@@ -7,7 +7,8 @@ import java.util.Random;
 
 public class Main {
 
-    //Поля переехали в методы
+    //Random переехал обратно
+    private static Random random = new Random();
 
     public static void main(String[] args) {
         task1();
@@ -30,7 +31,6 @@ public class Main {
         способ создания массива: с помощью ключевого слова или сразу заполненный элементами.
      */
     private static void task1() {
-        Random random = new Random();
         int[] intArray = new int[3];
         for (int i = 0; i < intArray.length; i++) {
             intArray[i] = i + 1;
@@ -48,7 +48,6 @@ public class Main {
     В конце строки запятую ставить не надо.
      */
     private static void task2() {
-        Random random = new Random();
         int[] intArray = new int[3];
         for (int i = 0; i < intArray.length; i++) {
             intArray[i] = i + 1;
@@ -94,7 +93,6 @@ public class Main {
         (Произвольные элементы третьего массива в обратном порядке)
      */
     private static void task3() {
-        Random random = new Random();
         int[] intArray = new int[3];
         for (int i = 0; i < intArray.length; i++) {
             intArray[i] = i + 1;
@@ -136,24 +134,20 @@ public class Main {
     Распечатайте результат преобразования в консоль.
      */
     private static void task4() {
-        Random random = new Random();
-        int[] startArray = new int[20];
+        int[] taskArray = new int[20];
         for (int i = 0; i < 20; i++) {
-            startArray[i] = random.nextInt(1,100);
+            taskArray[i] = random.nextInt(1,100);
         }
-        System.out.println("Изначальный массив: " + Arrays.toString(startArray));
+        System.out.println("Изначальный массив: " + Arrays.toString(taskArray));
         List<String> onlyChangedValues = new ArrayList<>();
-        int[] endArray = new int[20];
         for (int i = 0; i < 20; i++) {
-            if (startArray[i] % 2 != 0) {
-                onlyChangedValues.add("Число под номером: " + i + ", и значением: " + startArray[i]);
-                endArray[i] = startArray[i] + 1;
-            } else {
-                endArray[i] = startArray[i];
+            if (taskArray[i] % 2 != 0) {
+                onlyChangedValues.add("Число под номером: " + i + ", и значением: " + taskArray[i]);
+                taskArray[i]++;
             }
         }
         System.out.println("Пуф!");
-        System.out.println("Конечный массив: " + Arrays.toString(endArray));
+        System.out.println("Конечный массив: " + Arrays.toString(taskArray));
         System.out.println("Были изменены следующие числа");
         for (String s: onlyChangedValues) {
             System.out.println(s);
