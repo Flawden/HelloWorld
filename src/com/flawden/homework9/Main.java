@@ -22,8 +22,7 @@ public class Main {
             arrayOfExpenses[i] = random.nextInt(100_000, 200_000);
             System.out.println("Транзакция №" + (i+1) + " равна " + arrayOfExpenses[i]);
         }
-
-        task1(arrayOfExpenses);
+        System.out.println("Сумма трат за месяц составила " + task1(arrayOfExpenses) + " рублей.");
         System.out.println();
         task2(arrayOfExpenses);
         System.out.println();
@@ -38,12 +37,12 @@ public class Main {
     Напишите программу, которая решит эту задачу, и выведите в консоль результат в
     формате: «Сумма трат за месяц составила … рублей».
      */
-    private static void task1(double[] arrayOfExpenses) {
+    private static double task1(double[] arrayOfExpenses) {
         double total = 0;
         for (int i = 0; i < arrayOfExpenses.length; i++) {
             total+=arrayOfExpenses[i];
         }
-        System.out.println("Сумма трат за месяц составила " + total + " рублей.");
+        return total;
     }
 
     /*
@@ -73,12 +72,14 @@ public class Main {
     Теперь бухгалтерия хочет понять, какую в среднем сумму компания тратила в течение
     30 дней.
     Напишите программу, которая посчитает среднее значение трат за месяц (то есть сумму
-    всех трат за месяц поделить на количество дней), и выведите в консоль результат в формате: «Средняя сумма трат за месяц составила … рублей».
+    всех трат за месяц поделить на количество дней), и выведите в консоль результат в
+    формате: «Средняя сумма трат за месяц составила … рублей».
     Важно помнить: подсчет среднего значения может иметь остаток, то есть быть не целым,
     а дробным числом.
      */
     private static void task3(double[] arrayOfExpenses) {
-
+        double average = task1(arrayOfExpenses) / 30;
+        System.out.println("Средняя сумма трат за месяц составила " + average + " рублей");
     }
 
     /*
