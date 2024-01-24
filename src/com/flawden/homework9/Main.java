@@ -1,5 +1,6 @@
 package com.flawden.homework9;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
@@ -28,7 +29,7 @@ public class Main {
         System.out.println();
         task3(arrayOfExpenses);
         System.out.println();
-        task4(arrayOfExpenses);
+        task4();
     }
 
     /*
@@ -95,8 +96,11 @@ public class Main {
     Важно: не используйте дополнительные массивы для решения этой задачи. Необходимо
     корректно пройти по массиву циклом и распечатать его элементы в правильном порядке.
      */
-    private static void task4(double[] arrayOfExpenses) {
-
+    private static void task4() {
+        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int i = reverseFullName.length - 1; i >= 0; i--) {
+            System.out.print(reverseFullName[i]);
+        }
     }
 
 }
