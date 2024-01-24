@@ -24,8 +24,11 @@ public class Main {
         }
 
         task1(arrayOfExpenses);
+        System.out.println();
         task2(arrayOfExpenses);
+        System.out.println();
         task3(arrayOfExpenses);
+        System.out.println();
         task4(arrayOfExpenses);
     }
 
@@ -51,7 +54,18 @@ public class Main {
     за день составила … рублей».
      */
     private static void task2(double[] arrayOfExpenses) {
-
+        double min = arrayOfExpenses[0];
+        double max = arrayOfExpenses[0];
+        for (int i = 0; i < arrayOfExpenses.length; i++) {
+            if(arrayOfExpenses[i] > max) {
+                max = arrayOfExpenses[i];
+            }
+            if(arrayOfExpenses[i] < min) {
+                min = arrayOfExpenses[i];
+            }
+        }
+        System.out.println("Минимальная сумма трат за день составила " + min + " рублей.\n" +
+                "Максимальная сумма трат за день составила " + max + " рублей");
     }
 
     /*
