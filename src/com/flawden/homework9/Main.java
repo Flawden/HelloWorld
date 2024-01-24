@@ -1,6 +1,5 @@
 package com.flawden.homework9;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
@@ -23,6 +22,11 @@ public class Main {
             arrayOfExpenses[i] = random.nextInt(100_000, 200_000);
             System.out.println("Транзакция №" + (i+1) + " равна " + arrayOfExpenses[i]);
         }
+
+        task1(arrayOfExpenses);
+        task2(arrayOfExpenses);
+        task3(arrayOfExpenses);
+        task4(arrayOfExpenses);
     }
 
     /*
@@ -31,8 +35,12 @@ public class Main {
     Напишите программу, которая решит эту задачу, и выведите в консоль результат в
     формате: «Сумма трат за месяц составила … рублей».
      */
-    private static void task1() {
-
+    private static void task1(double[] arrayOfExpenses) {
+        double total = 0;
+        for (int i = 0; i < arrayOfExpenses.length; i++) {
+            total+=arrayOfExpenses[i];
+        }
+        System.out.println("Сумма трат за месяц составила " + total + " рублей.");
     }
 
     /*
@@ -42,7 +50,7 @@ public class Main {
     формате: «Минимальная сумма трат за день составила … рублей. Максимальная сумма трат
     за день составила … рублей».
      */
-    private static void task2() {
+    private static void task2(double[] arrayOfExpenses) {
 
     }
 
@@ -55,7 +63,7 @@ public class Main {
     Важно помнить: подсчет среднего значения может иметь остаток, то есть быть не целым,
     а дробным числом.
      */
-    private static void task3() {
+    private static void task3(double[] arrayOfExpenses) {
 
     }
 
@@ -72,7 +80,7 @@ public class Main {
     Важно: не используйте дополнительные массивы для решения этой задачи. Необходимо
     корректно пройти по массиву циклом и распечатать его элементы в правильном порядке.
      */
-    private static void task4() {
+    private static void task4(double[] arrayOfExpenses) {
 
     }
 
