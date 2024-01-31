@@ -17,15 +17,15 @@ public class Main {
         task2(2, 2015);
         task2(2, 2022);
         System.out.println();
-        task3(100);
-        task3(200);
-        task3(300);
-        task3(2024);
-        task3(2032);
-        task3(1984);
-        task3(2022);
-        task3(1918);
-        task3(2033);
+        System.out.println(task3(100));
+        System.out.println(task3(200));
+        System.out.println(task3(300));
+        System.out.println(task3(2024));
+        System.out.println(task3(2032));
+        System.out.println(task3(1984));
+        System.out.println(task3(2022));
+        System.out.println(task3(1918));
+        System.out.println(task3(2033));
         System.out.println();
         task4(-20);
         task4(0);
@@ -123,17 +123,17 @@ public class Main {
     Также високосным является каждый четырехсотый год. Год должен быть больше, чем 1584
     (в котором был введен високосный год).
      */
-    private static void task3(int year) {
+    public static String task3(int year) {
         System.out.println("Ожидайте, я гуглю...");
         try {
             Thread.sleep(200);
         } catch (InterruptedException e) {
-            System.out.println("Если вы видите это сообщение, то данное приложение является многопоточным.");
+            return "Если вы видите это сообщение, то данное приложение является многопоточным.";
         }
         if ((year % 4 == 0  &&  year % 100 != 0  ) || ( year % 400 == 0 )) {
-            System.out.println(year + " год является високосным");
+            return year + " год является високосным";
         } else {
-            System.out.println(year + " год не является високосным");
+            return year + " год не является високосным";
         }
     }
 
