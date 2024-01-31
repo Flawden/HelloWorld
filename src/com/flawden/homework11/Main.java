@@ -33,7 +33,15 @@ public class Main {
     «...  год — високосный год». Если год невисокосный, то: «... год — невисокосный год».
      */
     private static void task1() {
-
+        System.out.println(com.flawden.homework5.Main.task3(100));
+        System.out.println(com.flawden.homework5.Main.task3(200));
+        System.out.println(com.flawden.homework5.Main.task3(300));
+        System.out.println(com.flawden.homework5.Main.task3(2024));
+        System.out.println(com.flawden.homework5.Main.task3(2032));
+        System.out.println(com.flawden.homework5.Main.task3(1984));
+        System.out.println(com.flawden.homework5.Main.task3(2022));
+        System.out.println(com.flawden.homework5.Main.task3(1918));
+        System.out.println(com.flawden.homework5.Main.task3(2033));
     }
 
     /*
