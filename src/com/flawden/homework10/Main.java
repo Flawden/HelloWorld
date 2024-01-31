@@ -11,7 +11,7 @@ public class Main {
         System.out.println();
         task2(fullName);
         System.out.println();
-        task3();
+        task3("Иванов Семён Семёнович");
     }
 
     /*
@@ -52,8 +52,8 @@ public class Main {
     В качестве исходных данных используйте строку fullName и данные в ней — «Иванов Семён Семёнович».
     Выведите результат программы в консоль в формате: «Данные Ф. И. О. сотрудника — ...».
      */
-    private static void task3() {
-
+    private static void task3(String fullname) {
+        System.out.println(fullname.replace('ё', 'е'));
     }
 
 }
