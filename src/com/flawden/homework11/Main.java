@@ -16,7 +16,11 @@ public class Main {
             System.out.println("Все пропало");
         }
         System.out.println();
-        task3();
+        try {
+            task3();
+        } catch (IOException e) {
+            System.out.println("Все пропало");
+        }
     }
 
     /*
@@ -167,8 +171,20 @@ public class Main {
     Ваша задача — доработать код, а именно написать метод, который на вход принимает
     дистанцию и возвращает итоговое количество дней доставки.
      */
-    private static void task3() {
+    private static void task3() throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Введите дистанцию до места доставки:");
 
+        boolean isIncorrect = true;
+        while (isIncorrect) {
+            try {
+                int distance = Integer.parseInt(bufferedReader.readLine());
+                com.flawden.homework5.Main.task4(distance);
+                isIncorrect = false;
+            } catch (NumberFormatException e) {
+                System.out.println("Ошибка! На вход ожидалсь число. Давай по новой.");
+            }
+        }
     }
 
 }

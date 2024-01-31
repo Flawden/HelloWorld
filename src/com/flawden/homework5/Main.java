@@ -154,7 +154,7 @@ public class Main {
     Объявите целочисленную переменную deliveryDistance = 95, которая содержит дистанцию
     до клиента.
      */
-    private static void task4(int deliveryDistance) {
+    public static void task4(int deliveryDistance) {
         System.out.println("Заявленная дистанция доставки: " + deliveryDistance);
         if (deliveryDistance < 0) {
             System.out.println("Приносим свои изменения. Машина времени в данный момент в разработке.");
