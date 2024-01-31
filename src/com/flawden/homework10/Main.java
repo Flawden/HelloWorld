@@ -3,9 +3,13 @@ package com.flawden.homework10;
 public class Main {
 
     public static void main(String[] args) {
-        task1();
+        String firstName = "Ivan";
+        String middleName = "Ivanov";
+        String lastName = "Ivanovich";
+        String fullName =  middleName + " " + firstName + " " + lastName;
+        task1(fullName);
         System.out.println();
-        task2();
+        task2(fullName);
         System.out.println();
         task3();
     }
@@ -24,11 +28,7 @@ public class Main {
     Выведите в консоль фразу: «Ф. И. О. сотрудника — …».
     В качестве данных для задачи используйте Ivanov Ivan Ivanovich.
      */
-    private static void task1() {
-        String firstName = "Ivan";
-        String middleName = "Ivanov";
-        String lastName = "Ivanovich";
-        String fullName =  middleName + " " + firstName + " " + lastName;
+    private static void task1(String fullName) {
         System.out.println(fullName);
     }
 
@@ -42,8 +42,8 @@ public class Main {
     Результат программы выведите в консоль в формате: «Данные Ф. И. О. сотрудника для
     заполнения отчета — …».
      */
-    private static void task2() {
-
+    private static void task2(String fullname) {
+        System.out.println(fullname.toUpperCase());
     }
 
     /*
