@@ -1,11 +1,20 @@
 package com.flawden.homework11;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.time.LocalDate;
+
 public class Main {
 
     public static void main(String[] args) {
         task1();
         System.out.println();
-        task2();
+        try {
+            task2();
+        } catch (IOException e) {
+            System.out.println("Все пропало");
+        }
         System.out.println();
         task3();
     }
@@ -78,8 +87,62 @@ public class Main {
     В результате программа должна выводить в консоль сообщение, какую версию приложения
     (обычную или облегченную) и для какой ОС (Android или iOS) установить пользователю.
      */
-    private static void task2() {
+    private static void task2() throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        boolean isIncorrect = true;
+        while (isIncorrect) {
+            try {
+                System.out.println("Введите год вашего устройства:");
+                int yearOfPhone = Integer.parseInt(bufferedReader.readLine());
+                if (yearOfPhone < 1876) {
+                    System.out.println("Путешественник во времени найден! Ловите его!");
+                    return;
+                }
+                System.out.println("Введите номер вашей операционной системы из списка:\n" +
+                        "0 - IOS\n" +
+                        "1 - Android");
+                int OSType = Integer.parseInt(bufferedReader.readLine());
+                isIncorrect = false;
+                versionDetector(OSType, yearOfPhone);
+            } catch (NumberFormatException e) {
+                System.out.println("Ошибка! На вход ожидалсь число. Давай по новой.");
+            }
+        }
+    }
 
+    private static void versionDetector(int osType, int yearOfPhone) {
+        if (osType != 0 && osType != 1) {
+            System.out.println("Ваш тип операционной системы не поддерживается");
+            return;
+        }
+        int currentYear = LocalDate.now().getYear();
+        if (currentYear == yearOfPhone) {
+            newVersionLinker(osType);
+        } else if (currentYear < yearOfPhone) {
+            System.out.println("Ваш телефон из будущего");
+        } else {
+            oldVersionLinker(osType);
+        }
+    }
+
+    private static void oldVersionLinker(int osType) {
+        if (osType == 1) {
+            System.out.println("Ваше Android устройство устарело. Ваша ссылка на " +
+                    "облегченную версию: http://Облегченная-андроид-версия.да");
+        } else if (osType == 0) {
+            System.out.println("Ваше IOS устройство устарело. Ваша ссылка на " +
+                    "облегченную версию: http://Облегченная-IOS-версия.нет");
+        }
+    }
+
+    private static void newVersionLinker(int osType) {
+        if (osType == 1) {
+            System.out.println("Ваша ссылка на приложение Android приложение: " +
+                    "http://Облегченная-андроид-версия.да");
+        } else if (osType == 0) {
+            System.out.println("Ваша ссылка на IOS приложение: " +
+                    "http://Облегченная-IOS-версия.нет");
+        }
     }
 
     /*
