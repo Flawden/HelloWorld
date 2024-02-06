@@ -3,7 +3,11 @@ package com.flawden.homework12;
 public class Main {
 
     public static void main(String[] args) {
-
+        Author arthur  = new Author("Arthur", "Weasley");
+        Author richard = new Author("Richard", "Bach");
+        Book nonExistentBook = new Book("A non-existent book", arthur, 1990);
+        Book seagull = new Book("Jonathan Livingston Seagull", richard, 1970);
+        nonExistentBook.setAge(1995);
     }
 
     /*
