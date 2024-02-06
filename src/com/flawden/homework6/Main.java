@@ -81,7 +81,7 @@ public class Main {
     начиная с 1904 года до 2096. В консоль результат должен выводиться в формате:
     «… год является високосным».
      */
-    private static void task5() {
+    public static void task5() {
         for (int year = 1904; year <=2096; year++) {
             if ((year % 4 == 0  &&  year % 100 != 0  ) || ( year % 400 == 0 )) {
                 System.out.println(year + " год является високосным");
