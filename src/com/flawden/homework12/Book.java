@@ -1,5 +1,7 @@
 package com.flawden.homework12;
 
+import java.util.Objects;
+
 public class Book {
 
     private String title;
@@ -26,5 +28,25 @@ public class Book {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return age == book.age && Objects.equals(title, book.title) && Objects.equals(author, book.author);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, author, age);
+    }
+
+    @Override
+    public String toString() {
+        return "Название книги: " + title + ".\n" +
+                "Автор = " + author.getName() + " " + author.getSurname() + ".\n" +
+                "Год издания: " + age;
     }
 }
