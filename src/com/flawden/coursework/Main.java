@@ -1,6 +1,11 @@
 package com.flawden.coursework;
 
+import com.flawden.coursework.util.Tester;
+
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
@@ -24,6 +29,7 @@ public class Main {
         Employee[] employees = new Employee[10];
         employeesInitializer(employees);
         basicDifficult(employees);
+        increasedDifficulty(employees);
     }
 
     private static void employeesInitializer(Employee [] employees) {
@@ -40,6 +46,7 @@ public class Main {
     }
 
     /*
+    Базовая сложность
      - Создать класс Employee, который содержит информацию о ФИО, отделе и зарплате сотрудника.
      Отделы для простоты должны быть названы от 1 до 5.
      - Добавить статическую переменную-счетчик, которая будет отвечать за id.
@@ -75,12 +82,38 @@ public class Main {
         Arrays.stream(employees).forEach(System.out::print);
     }
 
+    private static void employeesPrinter(Employee[] employees, int department) {
+        if (!Tester.isValidDepartment(department)) {
+            return;
+        }
+        Employee[] employeesInDepartment = findEmployeesByDepartment(employees, department);
+        System.out.println("В отделе номер " + department + " были найдены следующие сотрудники:");
+        Arrays.stream(employeesInDepartment).forEach(employee -> System.out.println("Сотрудник:\n" +
+                "id: " + employee.getId() + "\n" +
+                "Имя: " + employee.getFirstname() + "\n" +
+                "Фамилия: " + employee.getLastname() + "\n" +
+                "Отчество: " + employee.getPatronymic() + "\n" +
+                "Зароботная плата: " + employee.getSalary() + " рублей"));
+    }
+
     private static void salarySum(Employee[] employees) {
         double salarySum = 0;
         for (Employee employee: employees) {
             salarySum+=employee.getSalary();
         }
         System.out.println("Итоговые затраты на зарплату: " + salarySum + " рублей.");
+    }
+
+    private static void salarySum(Employee[] employees, int department) {
+        if (!Tester.isValidDepartment(department)) {
+            return;
+        }
+        Employee[] employeesInDepartment = findEmployeesByDepartment(employees, department);
+        double salarySum = 0;
+        for (Employee employee: employeesInDepartment) {
+            salarySum+=employee.getSalary();
+        }
+        System.out.println("Итоговые затраты на зарплату в отделе номер " + department + ": " + salarySum + " рублей.");
     }
 
     private static void minSalary(Employee[] employees) {
@@ -93,6 +126,20 @@ public class Main {
         System.out.println("Минимальная зарплата: " + minSalary + " рублей.");
     }
 
+    private static void minSalary(Employee[] employees, int department) {
+        if (!Tester.isValidDepartment(department)) {
+            return;
+        }
+        Employee[] employeesInDepartment = findEmployeesByDepartment(employees, department);
+        double minSalary = Double.MAX_VALUE;
+        for (Employee employee: employeesInDepartment) {
+            if (minSalary > employee.getSalary()) {
+                minSalary = employee.getSalary();
+            }
+        }
+        System.out.println("Минимальная зарплата в отделе номер " + department + ": " + minSalary + " рублей.");
+    }
+
     private static void maxSalary(Employee[] employees) {
         double maxSalary = 0;
         for (Employee employee: employees) {
@@ -103,6 +150,20 @@ public class Main {
         System.out.println("Максимальная зарплата: " + maxSalary + " рублей.");
     }
 
+    private static void maxSalary(Employee[] employees, int department) {
+        if (!Tester.isValidDepartment(department)) {
+            return;
+        }
+        Employee[] employeesInDepartment = findEmployeesByDepartment(employees, department);
+        double maxSalary = 0;
+        for (Employee employee: employeesInDepartment) {
+            if (maxSalary < employee.getSalary()) {
+                maxSalary = employee.getSalary();
+            }
+        }
+        System.out.println("Максимальная зарплата в отделе номер " + department + ": " + maxSalary + " рублей.");
+    }
+
     private static void averageSalary(Employee[] employees) {
         double salarySum = 0;
         for (Employee employee: employees) {
@@ -111,7 +172,116 @@ public class Main {
         System.out.println("Средняя зарплата сотрудников: " + (salarySum/employees.length) + " рублей.");
     }
 
+    private static void averageSalary(Employee[] employees, int department) {
+        if (!Tester.isValidDepartment(department)) {
+            return;
+        }
+        Employee[] employeesInDepartment = findEmployeesByDepartment(employees, department);
+        double salarySum = 0;
+        for (Employee employee: employeesInDepartment) {
+            salarySum+=employee.getSalary();
+        }
+        System.out.println("Средняя зарплата сотрудников в отделе номер " + department + ": " + (salarySum/employeesInDepartment.length) + " рублей.");
+    }
+
     private static void fullnamePrinter(Employee[] employees) {
         Arrays.stream(employees).forEach(employee -> System.out.println(employee.getFirstname() + " " + employee.getPatronymic() + " " + employee.getLastname()));
     }
+
+    /*
+    Повышенная сложность
+    Создать дополнительные статические методы для решения следующих задач.
+    - Проиндексировать зарплату (вызвать изменение зп у всех сотрудников на величину
+    аргумента в %)
+    - Получить в качестве параметра номер отдела (1-5) и найти (всего 6 методов):
+    - Сотрудника с минимальной зп;
+    - Сотрудника с максимальной зп;
+    - Сумму затрат на зп по отделу;
+    - Среднюю зп по отделу (учесть, что количество людей в отделе отличается
+    от employees.length);
+    - Проиндексировать зарплату всех сотрудников отдела на процент, который приходит в
+    качестве параметра;
+    - Напечатать всех сотрудников отдела (все данные, кроме отдела).
+    - Получить в качестве параметра число и вывести:
+    - Всех сотрудников с зп меньше числа (распечатать id, фио и зп в консоль);
+    - Всех сотрудников с зп больше (или равно) числа (распечатать id, фио и зп в консоль).
+     */
+
+    private static void increasedDifficulty(Employee[] employees) {
+        salaryIncreaseInPercent(employees, 10);
+        salaryIncreaseInPercent(employees, 20);
+        salaryIncreaseInPercent(employees, -10);
+        salaryIncreaseInPercent(employees, 0);
+        findEmployeesByDepartment(employees, -1);
+        findEmployeesByDepartment(employees, 0);
+        findEmployeesByDepartment(employees, -6);
+        Employee[] employeesByDepartment = findEmployeesByDepartment(employees, 1);
+        minSalary(employees, 1);
+        maxSalary(employees, 1);
+        salarySum(employees, 1);
+        averageSalary(employees, 1);
+        salaryIncreaseInPercent(employees, 10, 1);
+        salaryIncreaseInPercent(employees, 20, 1);
+        System.out.println();
+        employeesPrinter(employees, 1);
+        minSalary(employees, 2);
+        maxSalary(employees, 2);
+        salarySum(employees, 2);
+        averageSalary(employees, 2);
+        salaryIncreaseInPercent(employees, 10, 2);
+        salaryIncreaseInPercent(employees, 20, 2);
+        System.out.println();
+        employeesPrinter(employees, 2);
+    }
+
+    private static void salaryIncreaseInPercent(Employee[] employees, int percent) {
+        if (percent == 0) {
+            System.out.println("Зарплата сотрудников не была изменена");
+            return;
+        }
+        if (percent < 0) {
+            System.out.println("Отдел охраны труда запрещает уменьшать сотрудникам размер зароботной платы, во избежание снижения уровня эффективности сотрудников");
+            return;
+        }
+        for (Employee employee: employees) {
+            System.out.println("Зарплата " + employee.getFirstname() + " " + employee.getPatronymic() + " " + employee.getLastname() + " равна " + employee.getSalary() + " до индексации.");
+            employee.setSalary(employee.getSalary() / 100 * (100 + percent));
+            System.out.println("Зарплата " + employee.getFirstname() + " " + employee.getPatronymic() + " " + employee.getLastname() + " равна " + employee.getSalary() + " после индексации.");
+        }
+    }
+
+    private static void salaryIncreaseInPercent(Employee[] employees, int percent, int department) {
+        if (!Tester.isValidDepartment(department)) {
+            return;
+        }
+        if (percent == 0) {
+            System.out.println("Зарплата сотрудников не была изменена");
+            return;
+        }
+        if (percent < 0) {
+            System.out.println("Отдел охраны труда запрещает уменьшать сотрудникам размер зароботной платы, во избежание снижения уровня эффективности сотрудников");
+            return;
+        }
+        Employee[] employeesInDepartment = findEmployeesByDepartment(employees, department);
+        System.out.println("Информация по индексации отдела номер " + department + ":");
+        for (Employee employee: employeesInDepartment) {
+            System.out.println("Зарплата " + employee.getFirstname() + " " + employee.getPatronymic() + " " + employee.getLastname() + " равна " + employee.getSalary() + " до индексации.");
+            employee.setSalary(employee.getSalary() / 100 * (100 + percent));
+            System.out.println("Зарплата " + employee.getFirstname() + " " + employee.getPatronymic() + " " + employee.getLastname() + " равна " + employee.getSalary() + " после индексации.");
+        }
+    }
+
+    private static Employee[] findEmployeesByDepartment(Employee[] employees, int department) {
+        if (!Tester.isValidDepartment(department)) {
+            return new Employee[0];
+        }
+        List<Employee> employeesByDepartment = new ArrayList<>();
+        for (Employee employee: employees) {
+            if (employee.getDepartment() == department) {
+                employeesByDepartment.add(employee);
+            }
+        }
+        return employeesByDepartment.toArray(new Employee[0]);
+    }
+
 }
