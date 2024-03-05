@@ -1,6 +1,5 @@
-package com.flawden.homework9;
+package com.flawden.module1.homework9;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class Main {

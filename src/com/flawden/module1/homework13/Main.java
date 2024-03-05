@@ -1,7 +1,7 @@
-package com.flawden.homework13;
+package com.flawden.module1.homework13;
 
-import com.flawden.homework12.Author;
-import com.flawden.homework12.Book;
+import com.flawden.module1.homework12.Author;
+import com.flawden.module1.homework12.Book;
 
 public class Main {
 

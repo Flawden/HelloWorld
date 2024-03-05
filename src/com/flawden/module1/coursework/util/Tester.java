@@ -1,6 +1,6 @@
-package com.flawden.coursework.util;
+package com.flawden.module1.coursework.util;
 
-import com.flawden.coursework.Employee;
+import com.flawden.module1.coursework.Employee;
 
 public class Tester {
 
