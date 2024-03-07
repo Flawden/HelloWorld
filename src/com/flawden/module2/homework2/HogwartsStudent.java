@@ -46,6 +46,10 @@ public abstract class HogwartsStudent {
         this.transgressionDistance = transgressionDistance;
     }
 
+    public String getFullName() {
+        return name + " " + surname;
+    }
+
     @Override
     public String toString() {
         return "Hogwarts student:" + "\n" +

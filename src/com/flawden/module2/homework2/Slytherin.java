@@ -70,4 +70,80 @@ public class Slytherin extends HogwartsStudent {
                 "Witchcraft: " + witchcraft + "\n" +
                 "The distance of transgression: " + transgressionDistance + "\n";
     }
+
+    public static void compareStudentsByTrick(Slytherin studentOne, Slytherin studentTwo) {
+        System.out.println("The following students took part in the trick comparison:");
+        System.out.println(studentOne.getFullName() + " With an indicator of cunning: " + studentOne.getTrick());
+        System.out.println(studentTwo.getFullName() + " With an indicator of cunning: " + studentTwo.getTrick());
+        System.out.print("Winner: ");
+        if (studentOne.getTrick() == studentTwo.getTrick()) {
+            System.out.println("Nobody. Students are equal");
+        }
+        else if (studentOne.getTrick() > studentTwo.getTrick()) {
+            System.out.println(studentOne);
+        } else {
+            System.out.println(studentTwo);
+        }
+    }
+
+    public static void compareStudentsByDetermination(Slytherin studentOne, Slytherin studentTwo) {
+        System.out.println("The following students took part in the determination comparison:");
+        System.out.println(studentOne.getFullName() + " With an indicator of cunning: " + studentOne.getDetermination());
+        System.out.println(studentTwo.getFullName() + " With an indicator of cunning: " + studentTwo.getDetermination());
+        System.out.print("Winner: ");
+        if (studentOne.getDetermination() == studentTwo.getDetermination()) {
+            System.out.println("Nobody. Students are equal");
+        }
+        else if (studentOne.getDetermination() > studentTwo.getDetermination()) {
+            System.out.println(studentOne);
+        } else {
+            System.out.println(studentTwo);
+        }
+    }
+
+    public static void compareStudentsByAmbition(Slytherin studentOne, Slytherin studentTwo) {
+        System.out.println("The following students took part in the ambition comparison:");
+        System.out.println(studentOne.getFullName() + " With an indicator of cunning: " + studentOne.getAmbition());
+        System.out.println(studentTwo.getFullName() + " With an indicator of cunning: " + studentTwo.getAmbition());
+        System.out.print("Winner: ");
+        if (studentOne.getAmbition() == studentTwo.getAmbition()) {
+            System.out.println("Nobody. Students are equal");
+        }
+        else if (studentOne.getAmbition() > studentTwo.getAmbition()) {
+            System.out.println(studentOne);
+        } else {
+            System.out.println(studentTwo);
+        }
+    }
+
+    public static void compareStudentsByResourcefulness(Slytherin studentOne, Slytherin studentTwo) {
+        System.out.println("The following students took part in the resourcefulness comparison:");
+        System.out.println(studentOne.getFullName() + " With an indicator of cunning: " + studentOne.getResourcefulness());
+        System.out.println(studentTwo.getFullName() + " With an indicator of cunning: " + studentTwo.getResourcefulness());
+        System.out.print("Winner: ");
+        if (studentOne.getResourcefulness() == studentTwo.getResourcefulness()) {
+            System.out.println("Nobody. Students are equal");
+        }
+        else if (studentOne.getResourcefulness() > studentTwo.getResourcefulness()) {
+            System.out.println(studentOne);
+        } else {
+            System.out.println(studentTwo);
+        }
+    }
+
+    public static void compareStudentsByThirstForPower(Slytherin studentOne, Slytherin studentTwo) {
+        System.out.println("The following students took part in the thirst for power comparison:");
+        System.out.println(studentOne.getFullName() + " With an indicator of cunning: " + studentOne.getThirstForPower());
+        System.out.println(studentTwo.getFullName() + " With an indicator of cunning: " + studentTwo.getThirstForPower());
+        System.out.print("Winner: ");
+        if (studentOne.getThirstForPower() == studentTwo.getThirstForPower()) {
+            System.out.println("Nobody. Students are equal");
+        }
+        else if (studentOne.getThirstForPower() > studentTwo.getThirstForPower()) {
+            System.out.println(studentOne);
+        } else {
+            System.out.println(studentTwo);
+        }
+    }
+
 }
