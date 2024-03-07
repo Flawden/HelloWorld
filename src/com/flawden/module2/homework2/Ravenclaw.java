@@ -48,4 +48,16 @@ public class Ravenclaw extends HogwartsStudent {
         this.creativity = creativity;
     }
 
+    @Override
+    public String toString() {
+        return "Ravenclaw student:" + "\n" +
+                "Name: " + name + "\n" +
+                "Surname: " + surname + "\n" +
+                "Mind: " + mind + "\n" +
+                "Wisdom: " + wisdom + "\n" +
+                "Wit: " + wit + "\n" +
+                "Creativity: " + creativity + "\n" +
+                "Witchcraft: " + witchcraft + "\n" +
+                "The distance of transgression: " + transgressionDistance + "\n";
+    }
 }

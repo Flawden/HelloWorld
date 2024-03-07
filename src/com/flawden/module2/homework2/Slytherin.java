@@ -56,4 +56,18 @@ public class Slytherin extends HogwartsStudent {
     public void setThirstForPower(int thirstForPower) {
         this.thirstForPower = thirstForPower;
     }
+
+    @Override
+    public String toString() {
+        return "Slytherin student: " + "\n" +
+                "Name: " + name + "\n" +
+                "Surname: " + surname + "\n" +
+                "Trick: " + trick + "\n" +
+                "Determination: " + determination + "\n" +
+                "Ambition: " + ambition + "\n" +
+                "Resourcefulness: " + resourcefulness + "\n" +
+                "Thirst for power: " + thirstForPower + "\n" +
+                "Witchcraft: " + witchcraft + "\n" +
+                "The distance of transgression: " + transgressionDistance + "\n";
+    }
 }

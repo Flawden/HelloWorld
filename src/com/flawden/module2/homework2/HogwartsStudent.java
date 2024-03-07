@@ -9,8 +9,8 @@ public abstract class HogwartsStudent {
         this.transgressionDistance = transgressionDistance;
     }
 
-    private String name;
-    private String surname;
+    protected String name;
+    protected String surname;
     protected int witchcraft;
     protected int transgressionDistance;
 
@@ -44,5 +44,14 @@ public abstract class HogwartsStudent {
 
     public void setTransgressionDistance(int transgressionDistance) {
         this.transgressionDistance = transgressionDistance;
+    }
+
+    @Override
+    public String toString() {
+        return "Hogwarts student:" + "\n" +
+                "Name: " + name + "\n" +
+                "Surname: " + surname + "\n" +
+                "Witchcraft: " + witchcraft + "\n" +
+                "The distance of transgression: " + transgressionDistance + "\n";
     }
 }
