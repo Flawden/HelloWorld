@@ -22,6 +22,12 @@ public class Slytherin extends HogwartsStudent {
     }
 
     public void setTrick(int trick) {
+        if (trick > 100) {
+            trick = 100;
+        }
+        else if (trick < 100) {
+            trick = 0;
+        }
         this.trick = trick;
     }
 
@@ -30,6 +36,12 @@ public class Slytherin extends HogwartsStudent {
     }
 
     public void setDetermination(int determination) {
+        if (determination > 100) {
+            determination = 100;
+        }
+        else if (determination < 100) {
+            determination = 0;
+        }
         this.determination = determination;
     }
 
@@ -38,6 +50,12 @@ public class Slytherin extends HogwartsStudent {
     }
 
     public void setAmbition(int ambition) {
+        if (ambition > 100) {
+            ambition = 100;
+        }
+        else if (ambition < 100) {
+            ambition = 0;
+        }
         this.ambition = ambition;
     }
 
@@ -46,6 +64,12 @@ public class Slytherin extends HogwartsStudent {
     }
 
     public void setResourcefulness(int resourcefulness) {
+        if (resourcefulness > 100) {
+            resourcefulness = 100;
+        }
+        else if (resourcefulness < 100) {
+            resourcefulness = 0;
+        }
         this.resourcefulness = resourcefulness;
     }
 
@@ -54,6 +78,12 @@ public class Slytherin extends HogwartsStudent {
     }
 
     public void setThirstForPower(int thirstForPower) {
+        if (thirstForPower > 100) {
+            thirstForPower = 100;
+        }
+        else if (thirstForPower < 100) {
+            thirstForPower = 0;
+        }
         this.thirstForPower = thirstForPower;
     }
 

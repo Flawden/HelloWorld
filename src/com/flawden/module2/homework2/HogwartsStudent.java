@@ -35,6 +35,12 @@ public abstract class HogwartsStudent {
     }
 
     public void setWitchcraft(int witchcraft) {
+        if (witchcraft > 100) {
+            witchcraft = 100;
+        }
+        else if (witchcraft < 100) {
+            witchcraft = 0;
+        }
         this.witchcraft = witchcraft;
     }
 
@@ -43,6 +49,12 @@ public abstract class HogwartsStudent {
     }
 
     public void setTransgressionDistance(int transgressionDistance) {
+        if (transgressionDistance > 100) {
+            transgressionDistance = 100;
+        }
+        else if (transgressionDistance < 100) {
+            transgressionDistance = 0;
+        }
         this.transgressionDistance = transgressionDistance;
     }
 

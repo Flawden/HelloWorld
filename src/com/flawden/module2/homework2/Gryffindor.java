@@ -18,6 +18,12 @@ public class Gryffindor extends HogwartsStudent {
     }
 
     public void setNobility(int nobility) {
+        if (nobility > 100) {
+            nobility = 100;
+        }
+        else if (nobility < 100) {
+            nobility = 0;
+        }
         this.nobility = nobility;
     }
 
@@ -26,6 +32,12 @@ public class Gryffindor extends HogwartsStudent {
     }
 
     public void setHonor(int honor) {
+        if (honor > 100) {
+            honor = 100;
+        }
+        else if (honor < 100) {
+            honor = 0;
+        }
         this.honor = honor;
     }
 
@@ -34,6 +46,12 @@ public class Gryffindor extends HogwartsStudent {
     }
 
     public void setBravery(int bravery) {
+        if (bravery > 100) {
+            bravery = 100;
+        }
+        else if (bravery < 100) {
+            bravery = 0;
+        }
         this.bravery = bravery;
     }
 

@@ -18,6 +18,12 @@ public class Hufflepuff extends HogwartsStudent {
     }
 
     public void setHardworking(int hardworking) {
+        if (hardworking > 100) {
+            hardworking = 100;
+        }
+        else if (hardworking < 100) {
+            hardworking = 0;
+        }
         this.hardworking = hardworking;
     }
 
@@ -26,6 +32,12 @@ public class Hufflepuff extends HogwartsStudent {
     }
 
     public void setLoyal(int loyal) {
+        if (loyal > 100) {
+            loyal = 100;
+        }
+        else if (loyal < 100) {
+            loyal = 0;
+        }
         this.loyal = loyal;
     }
 
@@ -34,6 +46,12 @@ public class Hufflepuff extends HogwartsStudent {
     }
 
     public void setHonest(int honest) {
+        if (honest > 100) {
+            honest = 100;
+        }
+        else if (honest < 100) {
+            honest = 0;
+        }
         this.honest = honest;
     }
 

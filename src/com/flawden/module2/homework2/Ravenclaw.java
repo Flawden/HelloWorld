@@ -13,6 +13,12 @@ public class Ravenclaw extends HogwartsStudent {
     }
 
     public void setMind(int mind) {
+        if (mind > 100) {
+            mind = 100;
+        }
+        else if (mind < 100) {
+            mind = 0;
+        }
         this.mind = mind;
     }
 
@@ -21,6 +27,12 @@ public class Ravenclaw extends HogwartsStudent {
     }
 
     public void setWisdom(int wisdom) {
+        if (wisdom > 100) {
+            wisdom = 100;
+        }
+        else if (wisdom < 100) {
+            wisdom = 0;
+        }
         this.wisdom = wisdom;
     }
 
@@ -29,6 +41,12 @@ public class Ravenclaw extends HogwartsStudent {
     }
 
     public void setWit(int wit) {
+        if (wit > 100) {
+            wit = 100;
+        }
+        else if (wit < 100) {
+            wit = 0;
+        }
         this.wit = wit;
     }
 
@@ -37,6 +55,12 @@ public class Ravenclaw extends HogwartsStudent {
     }
 
     public void setCreativity(int creativity) {
+        if (creativity > 100) {
+            creativity = 100;
+        }
+        else if (creativity < 100) {
+            creativity = 0;
+        }
         this.creativity = creativity;
     }
 
