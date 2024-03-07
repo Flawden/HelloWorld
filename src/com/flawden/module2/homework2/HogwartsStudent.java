@@ -58,4 +58,34 @@ public abstract class HogwartsStudent {
                 "Witchcraft: " + witchcraft + "\n" +
                 "The distance of transgression: " + transgressionDistance + "\n";
     }
+
+    public static void compareStudentsByWitchcraft(HogwartsStudent studentOne, HogwartsStudent studentTwo) {
+        System.out.println("The following students took part in the witchcraft comparison:");
+        System.out.println(studentOne.getFullName() + " with an indicator of witchcraft: " + studentOne.getWitchcraft());
+        System.out.println(studentTwo.getFullName() + " with an indicator of witchcraft: " + studentTwo.getWitchcraft());
+        System.out.print("Winner: ");
+        if (studentOne.getWitchcraft() == studentTwo.getWitchcraft()) {
+            System.out.println("Nobody. Students are equal");
+        }
+        else if (studentOne.getWitchcraft() > studentTwo.getWitchcraft()) {
+            System.out.println(studentOne);
+        } else {
+            System.out.println(studentTwo);
+        }
+    }
+
+    public static void compareStudentsByTransgressionDistance(HogwartsStudent studentOne, HogwartsStudent studentTwo) {
+        System.out.println("The following students took part in the distance of transgression comparison:");
+        System.out.println(studentOne.getFullName() + " with an indicator of the distance of transgression: " + studentOne.getTransgressionDistance());
+        System.out.println(studentTwo.getFullName() + " with an indicator of the distance of transgression: " + studentTwo.getTransgressionDistance());
+        System.out.print("Winner: ");
+        if (studentOne.getTransgressionDistance() == studentTwo.getTransgressionDistance()) {
+            System.out.println("Nobody. Students are equal");
+        }
+        else if (studentOne.getTransgressionDistance() > studentTwo.getTransgressionDistance()) {
+            System.out.println(studentOne);
+        } else {
+            System.out.println(studentTwo);
+        }
+    }
 }
