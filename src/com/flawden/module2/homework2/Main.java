@@ -6,10 +6,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        List<Gryffindor> gryffindors = gryffindorsInitializer();
-        List<Slytherin> slytherins = slytherinsInitializer();
-        List<Hufflepuff> hufflepuffs = hufflepuffsInitializer();
-        List<Ravenclaw> ravenclaws = ravenclawsInitializer();
+        solutionTester();
     }
 
     private static List<Gryffindor> gryffindorsInitializer() {
@@ -44,4 +41,15 @@ public class Main {
         return ravenclaws;
     }
 
+    private static void solutionTester() {
+        Hogwarts hogwarts = new Hogwarts(gryffindorsInitializer(), slytherinsInitializer(), hufflepuffsInitializer(), ravenclawsInitializer());
+        //1-2. Демонстрация учеников и их свойств:
+        System.out.println(hogwarts.getGryffindors().get(2));
+        System.out.println(hogwarts.getRavenclaws().get(1));
+        //3. Сравним учеников по разным параметрам
+        Gryffindor.compareStudentsByAllPropertiesExceptForMagic(hogwarts.getGryffindors().get(2), hogwarts.getGryffindors().get(1));
+        Ravenclaw.compareStudentsByAllPropertiesExceptForMagic(hogwarts.getRavenclaws().get(1), hogwarts.getRavenclaws().get(2));
+        //4. Сравним учеников по силе магии и трансгрессии
+        HogwartsStudent.compareStudentsByMagic(hogwarts.getGryffindors().get(2), hogwarts.getRavenclaws().get(1));
+    }
 }
