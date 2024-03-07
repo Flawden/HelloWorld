@@ -146,4 +146,40 @@ public class Slytherin extends HogwartsStudent {
         }
     }
 
+    public static void compareStudentsByAllPropertiesExceptForMagic(Slytherin studentOne, Slytherin studentTwo) {
+        System.out.println("The following students took part in the comparison:");
+        System.out.println(studentOne);
+        System.out.println("And:");
+        System.out.println(studentTwo);
+        int theSumOfThePropertiesOfTheFirst = studentOne.getTrick() + studentOne.getAmbition() + studentOne.getDetermination() + studentOne.getThirstForPower() + studentOne.getResourcefulness();
+        int theSumOfThePropertiesOfTheSecond = studentTwo.getTrick() + studentTwo.getAmbition() + studentTwo.getDetermination() + studentTwo.getThirstForPower() + studentTwo.getResourcefulness();
+        System.out.println("Winner: ");
+        if (theSumOfThePropertiesOfTheFirst == theSumOfThePropertiesOfTheSecond) {
+            System.out.println("Nobody. Students are equal");
+        }
+        else if (theSumOfThePropertiesOfTheFirst > theSumOfThePropertiesOfTheSecond) {
+            System.out.println(studentOne.getFullName());
+        } else {
+            System.out.println(studentTwo.getFullName());
+        }
+    }
+
+    public static void compareStudentsByAllProperties(Slytherin studentOne, Slytherin studentTwo) {
+        System.out.println("The following students took part in the comparison:");
+        System.out.println(studentOne);
+        System.out.println("And:");
+        System.out.println(studentTwo);
+        int theSumOfThePropertiesOfTheFirst = studentOne.getTrick() + studentOne.getAmbition() + studentOne.getDetermination() + studentOne.getThirstForPower() + studentOne.getResourcefulness() + studentOne.getWitchcraft() + studentOne.getTransgressionDistance();
+        int theSumOfThePropertiesOfTheSecond = studentTwo.getTrick() + studentTwo.getAmbition() + studentTwo.getDetermination() + studentTwo.getThirstForPower() + studentTwo.getResourcefulness() + studentOne.getWitchcraft() + studentOne.getTransgressionDistance();
+        System.out.println("Winner: ");
+        if (theSumOfThePropertiesOfTheFirst == theSumOfThePropertiesOfTheSecond) {
+            System.out.println("Nobody. Students are equal");
+        }
+        else if (theSumOfThePropertiesOfTheFirst > theSumOfThePropertiesOfTheSecond) {
+            System.out.println(studentOne.getFullName());
+        } else {
+            System.out.println(studentTwo.getFullName());
+        }
+    }
+
 }

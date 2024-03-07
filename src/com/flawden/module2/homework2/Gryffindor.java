@@ -93,4 +93,40 @@ public class Gryffindor extends HogwartsStudent {
             System.out.println(studentTwo);
         }
     }
+
+    public static void compareStudentsByAllPropertiesExceptForMagic(Gryffindor studentOne, Gryffindor studentTwo) {
+        System.out.println("The following students took part in the comparison:");
+        System.out.println(studentOne);
+        System.out.println("And:");
+        System.out.println(studentTwo);
+        int theSumOfThePropertiesOfTheFirst = studentOne.getBravery() + studentOne.getHonor() + studentOne.getNobility();
+        int theSumOfThePropertiesOfTheSecond = studentTwo.getBravery() + studentTwo.getHonor() + studentTwo.getNobility();
+        System.out.println("Winner: ");
+        if (theSumOfThePropertiesOfTheFirst == theSumOfThePropertiesOfTheSecond) {
+            System.out.println("Nobody. Students are equal");
+        }
+        else if (theSumOfThePropertiesOfTheFirst > theSumOfThePropertiesOfTheSecond) {
+            System.out.println(studentOne.getFullName());
+        } else {
+            System.out.println(studentTwo.getFullName());
+        }
+    }
+
+    public static void compareStudentsByAllProperties(Gryffindor studentOne, Gryffindor studentTwo) {
+        System.out.println("The following students took part in the comparison:");
+        System.out.println(studentOne);
+        System.out.println("And:");
+        System.out.println(studentTwo);
+        int theSumOfThePropertiesOfTheFirst = studentOne.getBravery() + studentOne.getHonor() + studentOne.getNobility() + studentOne.getWitchcraft() + studentOne.getTransgressionDistance();
+        int theSumOfThePropertiesOfTheSecond = studentTwo.getBravery() + studentTwo.getHonor() + studentTwo.getNobility() + studentTwo.getWitchcraft() + studentTwo.getTransgressionDistance();
+        System.out.println("Winner: ");
+        if (theSumOfThePropertiesOfTheFirst == theSumOfThePropertiesOfTheSecond) {
+            System.out.println("Nobody. Students are equal");
+        }
+        else if (theSumOfThePropertiesOfTheFirst > theSumOfThePropertiesOfTheSecond) {
+            System.out.println(studentOne.getFullName());
+        } else {
+            System.out.println(studentTwo.getFullName());
+        }
+    }
 }
