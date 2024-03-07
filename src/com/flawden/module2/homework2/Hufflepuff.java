@@ -48,4 +48,49 @@ public class Hufflepuff extends HogwartsStudent {
                 "Witchcraft: " + witchcraft + "\n" +
                 "The distance of transgression: " + transgressionDistance + "\n";
     }
+
+    public static void compareStudentsByHardworking(Hufflepuff studentOne, Hufflepuff studentTwo) {
+        System.out.println("The following students took part in the hardworking comparison:");
+        System.out.println(studentOne.getFullName() + " with an indicator of hardworking: " + studentOne.getHardworking());
+        System.out.println(studentTwo.getFullName() + " with an indicator of hardworking: " + studentTwo.getHardworking());
+        System.out.print("Winner: ");
+        if (studentOne.getHardworking() == studentTwo.getHardworking()) {
+            System.out.println("Nobody. Students are equal");
+        }
+        else if (studentOne.getHardworking() > studentTwo.getHardworking()) {
+            System.out.println(studentOne);
+        } else {
+            System.out.println(studentTwo);
+        }
+    }
+
+    public static void compareStudentsByLoyal(Hufflepuff studentOne, Hufflepuff studentTwo) {
+        System.out.println("The following students took part in the loyal comparison:");
+        System.out.println(studentOne.getFullName() + " with an indicator of loyal: " + studentOne.getLoyal());
+        System.out.println(studentTwo.getFullName() + " with an indicator of loyal: " + studentTwo.getLoyal());
+        System.out.print("Winner: ");
+        if (studentOne.getLoyal() == studentTwo.getLoyal()) {
+            System.out.println("Nobody. Students are equal");
+        }
+        else if (studentOne.getLoyal() > studentTwo.getLoyal()) {
+            System.out.println(studentOne);
+        } else {
+            System.out.println(studentTwo);
+        }
+    }
+
+    public static void compareStudentsByHonest(Hufflepuff studentOne, Hufflepuff studentTwo) {
+        System.out.println("The following students took part in the honest comparison:");
+        System.out.println(studentOne.getFullName() + " with an indicator of honest: " + studentOne.getHonest());
+        System.out.println(studentTwo.getFullName() + " with an indicator of honest: " + studentTwo.getHonest());
+        System.out.print("Winner: ");
+        if (studentOne.getHonest() == studentTwo.getHonest()) {
+            System.out.println("Nobody. Students are equal");
+        }
+        else if (studentOne.getHonest() > studentTwo.getHonest()) {
+            System.out.println(studentOne);
+        } else {
+            System.out.println(studentTwo);
+        }
+    }
 }
