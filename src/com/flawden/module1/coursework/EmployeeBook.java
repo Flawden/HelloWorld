@@ -1,6 +1,6 @@
-package com.flawden.coursework;
+package com.flawden.module1.coursework;
 
-import com.flawden.coursework.util.Tester;
+import com.flawden.module1.coursework.util.Tester;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -52,8 +52,8 @@ public class EmployeeBook {
 
     protected void salarySum() {
         double salarySum = 0;
-        for (Employee employee: employees) {
-            salarySum+=employee.getSalary();
+        for (Employee employee : employees) {
+            salarySum += employee.getSalary();
         }
         System.out.println("Итоговые затраты на зарплату: " + salarySum + " рублей.");
     }
@@ -64,15 +64,15 @@ public class EmployeeBook {
         }
         Employee[] employeesInDepartment = findEmployeesByDepartment(department);
         double salarySum = 0;
-        for (Employee employee: employeesInDepartment) {
-            salarySum+=employee.getSalary();
+        for (Employee employee : employeesInDepartment) {
+            salarySum += employee.getSalary();
         }
         System.out.println("Итоговые затраты на зарплату в отделе номер " + department + ": " + salarySum + " рублей.");
     }
 
     protected void minSalary() {
         double minSalary = Double.MAX_VALUE;
-        for (Employee employee: employees) {
+        for (Employee employee : employees) {
             if (minSalary > employee.getSalary()) {
                 minSalary = employee.getSalary();
             }
@@ -86,7 +86,7 @@ public class EmployeeBook {
         }
         Employee[] employeesInDepartment = findEmployeesByDepartment(department);
         double minSalary = Double.MAX_VALUE;
-        for (Employee employee: employeesInDepartment) {
+        for (Employee employee : employeesInDepartment) {
             if (minSalary > employee.getSalary()) {
                 minSalary = employee.getSalary();
             }
@@ -96,7 +96,7 @@ public class EmployeeBook {
 
     protected void maxSalary() {
         double maxSalary = 0;
-        for (Employee employee: employees) {
+        for (Employee employee : employees) {
             if (maxSalary < employee.getSalary()) {
                 maxSalary = employee.getSalary();
             }
@@ -110,7 +110,7 @@ public class EmployeeBook {
         }
         Employee[] employeesInDepartment = findEmployeesByDepartment(department);
         double maxSalary = 0;
-        for (Employee employee: employeesInDepartment) {
+        for (Employee employee : employeesInDepartment) {
             if (maxSalary < employee.getSalary()) {
                 maxSalary = employee.getSalary();
             }
@@ -120,10 +120,10 @@ public class EmployeeBook {
 
     protected void averageSalary() {
         double salarySum = 0;
-        for (Employee employee: employees) {
-            salarySum+=employee.getSalary();
+        for (Employee employee : employees) {
+            salarySum += employee.getSalary();
         }
-        System.out.println("Средняя зарплата сотрудников: " + (salarySum/employees.length) + " рублей.");
+        System.out.println("Средняя зарплата сотрудников: " + (salarySum / employees.length) + " рублей.");
     }
 
     protected void averageSalary(int department) {
@@ -132,10 +132,10 @@ public class EmployeeBook {
         }
         Employee[] employeesInDepartment = findEmployeesByDepartment(department);
         double salarySum = 0;
-        for (Employee employee: employeesInDepartment) {
-            salarySum+=employee.getSalary();
+        for (Employee employee : employeesInDepartment) {
+            salarySum += employee.getSalary();
         }
-        System.out.println("Средняя зарплата сотрудников в отделе номер " + department + ": " + (salarySum/employeesInDepartment.length) + " рублей.");
+        System.out.println("Средняя зарплата сотрудников в отделе номер " + department + ": " + (salarySum / employeesInDepartment.length) + " рублей.");
     }
 
     protected void fullnamePrinter() {
@@ -151,7 +151,7 @@ public class EmployeeBook {
             System.out.println("Отдел охраны труда запрещает уменьшать сотрудникам размер зароботной платы, во избежание снижения уровня эффективности сотрудников");
             return;
         }
-        for (Employee employee: employees) {
+        for (Employee employee : employees) {
             System.out.println("Зарплата " + employee.getFirstname() + " " + employee.getPatronymic() + " " + employee.getLastname() + " равна " + employee.getSalary() + " до индексации.");
             employee.setSalary(employee.getSalary() / 100 * (100 + percent));
             System.out.println("Зарплата " + employee.getFirstname() + " " + employee.getPatronymic() + " " + employee.getLastname() + " равна " + employee.getSalary() + " после индексации.");
@@ -172,7 +172,7 @@ public class EmployeeBook {
         }
         Employee[] employeesInDepartment = findEmployeesByDepartment(department);
         System.out.println("Информация по индексации отдела номер " + department + ":");
-        for (Employee employee: employeesInDepartment) {
+        for (Employee employee : employeesInDepartment) {
             System.out.println("Зарплата " + employee.getFirstname() + " " + employee.getPatronymic() + " " + employee.getLastname() + " равна " + employee.getSalary() + " до индексации.");
             employee.setSalary(employee.getSalary() / 100 * (100 + percent));
             System.out.println("Зарплата " + employee.getFirstname() + " " + employee.getPatronymic() + " " + employee.getLastname() + " равна " + employee.getSalary() + " после индексации.");
@@ -184,7 +184,7 @@ public class EmployeeBook {
             return new Employee[0];
         }
         List<Employee> employeesByDepartment = new ArrayList<>();
-        for (Employee employee: employees) {
+        for (Employee employee : employees) {
             if (employee.getDepartment() == department) {
                 employeesByDepartment.add(employee);
             }

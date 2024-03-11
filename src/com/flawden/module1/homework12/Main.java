@@ -1,4 +1,4 @@
-package com.flawden.homework12;
+package com.flawden.module1.homework12;
 
 public class Main {
 

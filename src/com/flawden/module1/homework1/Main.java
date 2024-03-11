@@ -1,4 +1,4 @@
-package com.flawden.homework1;
+package com.flawden.module1.homework1;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
-package com.flawden.coursework;
+package com.flawden.module1.coursework;
 
-import com.flawden.coursework.util.Tester;
+import com.flawden.module1.coursework.util.Tester;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -58,7 +58,7 @@ public class Main {
         employees[7] = new Employee("Сидор", "Владимирович", "Пивоваров", 2, 130000);
         employees[8] = new Employee("Олег", "Ярославович", "Соломенный", 1, 210000);
         employees[9] = new Employee("Спаниель", "Дмитриевич", "Гав", 1, 130000);
-        for (Employee employee: employees) {
+        for (Employee employee : employees) {
             if (employeeBook.addEmployee(employee)) {
                 System.out.println("Сотрудник добавлен");
             } else {

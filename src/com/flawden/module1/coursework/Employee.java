@@ -1,4 +1,4 @@
-package com.flawden.coursework;
+package com.flawden.module1.coursework;
 
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package com.flawden.homework11;
+package com.flawden.module1.homework11;
 
 import java.io.BufferedReader;
 import java.io.IOException;
