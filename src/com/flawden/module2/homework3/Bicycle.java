@@ -4,11 +4,16 @@ public class Bicycle extends Transport implements HasWheels {
 
     @Override
     public void updateTyre() {
-        if (this.getWheelsCount() > 0) {
+        for (int i = 0; i < getWheelsCount(); i++) {
             System.out.println("Берем гаячный ключ.");
             System.out.println("Меняем покрышку.");
-        } else {
-            System.out.println("Для замены покрышки у транспорта должно быть хотя бы одно колесо");
         }
+    }
+
+    @Override
+    public void service() {
+        System.out.println("Начато обслуживание велосипеда: " + getModelName());
+        updateTyre();
+        System.out.println();
     }
 }

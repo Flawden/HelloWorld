@@ -19,8 +19,14 @@ public abstract class Transport {
     }
 
     public void setWheelsCount(int wheelsCount) {
+        if (wheelsCount <= 0) {
+            System.out.println("Ошибка! Транспорт должен иметь хотя бы одно колесо");
+            return;
+        }
         this.wheelsCount = wheelsCount;
     }
+
+    public abstract void service();
 
 }
 
