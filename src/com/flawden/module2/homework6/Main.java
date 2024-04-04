@@ -8,6 +8,7 @@ public class Main {
 
     private static List<Integer> nums = new ArrayList<>(List.of(1, 1, 2, 3, 4, 4, 5, 5, 6, 7));
     private static List<String> strings = new ArrayList<>(List.of("один", "два","два", "три", "три", "три"));
+    private static List<String> words = new ArrayList<>();
 
     public static void main(String[] args) {
         task1();
@@ -57,7 +58,6 @@ public class Main {
      */
 
     private static void task3() {
-        List<String> words = new ArrayList<>();
         words.add("Anna");
         words.add("Anna");
         words.add("Bella");
@@ -71,7 +71,7 @@ public class Main {
                         word -> word, LinkedHashMap::new, Collectors.counting()
                 ))
                 .entrySet()
-                .stream() // Stream<Map.Entry<String, Long>>
+                .stream()
                 .filter(e -> 1L == e.getValue())
                 .map(Map.Entry::getKey)
                 .collect(Collectors.toList()));
@@ -94,7 +94,14 @@ public class Main {
      3
      */
     private static void task4() {
-
+        strings.stream()
+                .collect(Collectors.toMap(
+                        e -> e,
+                        e -> 1,
+                        Integer::sum))
+                .entrySet().stream()
+                .sorted(Map.Entry.comparingByValue())
+                .forEach(k -> System.out.println(k.getValue()));
     }
 
 }
