@@ -1,9 +1,7 @@
 package com.flawden.module2.homework6;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -45,7 +43,7 @@ public class Main {
     List<Integer> nums = new ArrayList<>(List.of(1, 1, 2, 3, 4, 4, 5, 5, 6, 7))
      */
     private static void task2() {
-        System.out.println(new HashSet<>(nums).stream().toList().stream().sorted().collect(Collectors.toList()));
+        System.out.println(nums.stream().distinct().collect(Collectors.toList()));
     }
 
     /*
@@ -57,8 +55,26 @@ public class Main {
     В качестве отладочной информации возьмите произвольный набор слов или текст, в котором
     встречаются повторения.
      */
-    private static void task3() {
 
+    private static void task3() {
+        List<String> words = new ArrayList<>();
+        words.add("Anna");
+        words.add("Anna");
+        words.add("Bella");
+        words.add("Zella");
+        words.add("Gella");
+        words.add("Gella");
+        words.add("Gella");
+        words.add("Orion");
+
+        System.out.println(words.stream().collect(Collectors.groupingBy(
+                        word -> word, LinkedHashMap::new, Collectors.counting()
+                ))
+                .entrySet()
+                .stream() // Stream<Map.Entry<String, Long>>
+                .filter(e -> 1L == e.getValue())
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toList()));
     }
 
     /*
