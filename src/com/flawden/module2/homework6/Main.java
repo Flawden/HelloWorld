@@ -1,9 +1,24 @@
 package com.flawden.module2.homework6;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Main {
 
-    public static void main(String[] args) {
+    private static List<Integer> nums = new ArrayList<>(List.of(1, 1, 2, 3, 4, 4, 5, 5, 6, 7));
+    private static List<String> strings = new ArrayList<>(List.of("один", "два","два", "три", "три", "три"));
 
+    public static void main(String[] args) {
+        task1();
+        System.out.println();
+        task2();
+        System.out.println();
+        task3();
+        System.out.println();
+        task4();
     }
 
     /*
@@ -16,7 +31,7 @@ public class Main {
     List<Integer> nums = new ArrayList<>(List.of(1, 1, 2, 3, 4, 4, 5, 5, 6, 7))
      */
     private static void task1() {
-
+        System.out.println(nums.stream().filter(i -> i % 2 == 0).collect(Collectors.toList()));
     }
 
     /*
@@ -30,7 +45,7 @@ public class Main {
     List<Integer> nums = new ArrayList<>(List.of(1, 1, 2, 3, 4, 4, 5, 5, 6, 7))
      */
     private static void task2() {
-
+        System.out.println(new HashSet<>(nums).stream().toList().stream().sorted().collect(Collectors.toList()));
     }
 
     /*
