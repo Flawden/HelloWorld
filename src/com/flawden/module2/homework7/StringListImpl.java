@@ -1,5 +1,6 @@
 package com.flawden.module2.homework7;
 
+import java.util.Arrays;
 import java.util.RandomAccess;
 
 public class StringListImpl implements StringList, RandomAccess, Cloneable, java.io.Serializable {
@@ -53,22 +54,59 @@ public class StringListImpl implements StringList, RandomAccess, Cloneable, java
 
     @Override
     public String add(int index, String item) {
-        return null;
+        if (index > size) {
+            throw new IllegalArgumentException("В массиве отсутствует элемент с данным индексом. ");
+        }
+        if (size + 1 >= strings.length) {
+            grow();
+        }
+        for (int i = size; i >= index; i--) {
+            strings[i + 1] = strings[i];
+        }
+        strings[index] = item;
+        size++;
+        return strings[index];
     }
 
     @Override
     public String set(int index, String item) {
-        return null;
+        if (index > size) {
+            throw new IllegalArgumentException("В массиве отсутствует элемент с данным индексом. ");
+        }
+        strings[index] = item;
+        size++;
+        return strings[index];
     }
 
     @Override
     public String remove(String item) {
-        return null;
+        boolean isFinding = false;
+        for (int i = 0; i < size; i++) {
+            if (strings[i].equals(item)) {
+                for (int j = i; j <= size; j++) {
+                    strings[j] = strings[j + 1];
+                }
+                isFinding = true;
+                break;
+            }
+        }
+        if (isFinding) {
+            size--;
+            return item;
+        }
+        throw new IllegalArgumentException("Элемент с указанным значением не найден.");
     }
 
     @Override
     public String remove(int index) {
-        return null;
+        if (index > size) {
+            throw new IllegalArgumentException("В массиве отсутствует элемент с данным индексом. ");
+        }
+        String item = strings[index];
+        for (int i = index; i < size; i++) {
+            strings[i] = strings[i + 1];
+        }
+        return item;
     }
 
     @Override
@@ -125,5 +163,13 @@ public class StringListImpl implements StringList, RandomAccess, Cloneable, java
         } catch (CloneNotSupportedException e) {
             throw new AssertionError();
         }
+    }
+
+    @Override
+    public String toString() {
+        return "StringListImpl{" +
+                "size=" + size +
+                ", strings=" + Arrays.toString(strings) +
+                '}';
     }
 }
