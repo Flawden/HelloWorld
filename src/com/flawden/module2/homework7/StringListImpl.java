@@ -1,9 +1,9 @@
 package com.flawden.module2.homework7;
 
 import java.util.Arrays;
-import java.util.RandomAccess;
+import java.util.Objects;
 
-public class StringListImpl implements StringList, RandomAccess, Cloneable, java.io.Serializable {
+public class StringListImpl implements StringList, java.io.Serializable {
 
     @java.io.Serial
     private static final long serialVersionUID = 1238219132;
@@ -111,27 +111,56 @@ public class StringListImpl implements StringList, RandomAccess, Cloneable, java
 
     @Override
     public boolean contains(String item) {
+        for (int i = 0; i < size; i++) {
+            if (strings[i].equals(item)) {
+                return true;
+            }
+        }
         return false;
     }
 
     @Override
     public int indexOf(String item) {
-        return 0;
+        for (int i = 0; i < size; i++) {
+            if (strings[i].equals(item)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     @Override
     public int lastIndexOf(String item) {
-        return 0;
+        for (int i = size - 1; i >= 0; i--) {
+            if (strings[i].equals(item)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     @Override
     public String get(int index) {
-        return null;
+        if (index > size) {
+            throw new IllegalArgumentException("В массиве отсутствует элемент с данным индексом.");
+        }
+        return strings[index];
     }
 
     @Override
     public boolean equals(StringList otherList) {
-        return false;
+        if (otherList == null) {
+            throw new NullPointerException("Ошибка! Вместо массива пришел какой-то Null. Мы такое не любим.");
+        }
+        if (otherList.size() != size) {
+            return false;
+        }
+        for (int i = 0; i < size; i++) {
+            if (!otherList.get(i).equals(strings[i])) {
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
@@ -141,28 +170,28 @@ public class StringListImpl implements StringList, RandomAccess, Cloneable, java
 
     @Override
     public boolean isEmpty() {
-        return false;
+        if(size > 0) {
+            return false;
+        }
+        return true;
+
     }
 
     @Override
     public void clear() {
-
+        for (int i = 0; i < size; i++) {
+            strings[i] = null;
+        }
+        size = 0;
     }
 
     @Override
     public String[] toArray() {
-        return new String[0];
-    }
-
-    @Override
-    public StringListImpl clone() {
-        try {
-            StringListImpl clone = (StringListImpl) super.clone();
-            // TODO: copy mutable state here, so the clone can't change the internals of the original
-            return clone;
-        } catch (CloneNotSupportedException e) {
-            throw new AssertionError();
+        String[] stringArray = new String[size];
+        for (int i = 0; i < size; i++) {
+            stringArray[i] = strings[i];
         }
+        return stringArray;
     }
 
     @Override
