@@ -8,8 +8,8 @@ public class StringListImpl implements StringList, java.io.Serializable {
     @java.io.Serial
     private static final long serialVersionUID = 1238219132;
 
-    private static final int DEFAULT_CAPACITY = 10;
-    private int size;
+    private static final int DEFAULT_CAPACITY = 0;
+    private int size = 0;
 
     transient String[] strings;
 
@@ -17,36 +17,34 @@ public class StringListImpl implements StringList, java.io.Serializable {
         this.strings = new String[DEFAULT_CAPACITY];
     }
 
-    public StringListImpl(int initialCapacity) {
-        if (initialCapacity > 0) {
-            this.strings = new String[initialCapacity];
-        }
-        else {
-            throw new IllegalArgumentException("Illegal Capacity: " + initialCapacity);
-        }
-    }
-
     private void grow() {
-        if (strings.length > 0) {
-            this.strings = copyOf(this.strings, this.strings.length * 2);
-        }  else {
-            this.strings = copyOf(this.strings, this.strings.length + 1);
+        if (strings.length == 0) {
+            strings = new String[1];
+            return;
         }
+        String[] newStringArray = new String[strings.length + 1];
+        System.out.println(strings.length);
+        for (int i = 0; i <= newStringArray.length - 2; i++) {
+            newStringArray[i] = strings[i];
+        }
+        strings = newStringArray;
     }
 
-    private String[] copyOf(String[] oldStringArray, int newCapacity) {
-        String[] newStringArray = new String[newCapacity];
-        for (int i = 0; i < oldStringArray.length; i++) {
-            newStringArray[i] = oldStringArray[i];
+    private void reduce() {
+        if (strings.length == 0) {
+            throw new IllegalArgumentException("Массив и так нулевой, куда еще меньше?");
         }
-        return newStringArray;
+        String[] newStringArray = new String[strings.length - 1];
+        System.out.println(strings.length);
+        for (int i = 0; i <= newStringArray.length - 1; i++) {
+            newStringArray[i] = strings[i];
+        }
+        strings = newStringArray;
     }
 
     @Override
     public String add(String item) {
-        while (size + 1 >= this.strings.length) {
-            grow();
-        }
+        grow();
         this.strings[size] = item;
         size++;
         return strings[size - 1];
@@ -57,10 +55,8 @@ public class StringListImpl implements StringList, java.io.Serializable {
         if (index > size) {
             throw new IllegalArgumentException("В массиве отсутствует элемент с данным индексом. ");
         }
-        if (size + 1 >= strings.length) {
-            grow();
-        }
-        for (int i = size; i >= index; i--) {
+        grow();
+        for (int i = size - 1; i >= index; i--) {
             strings[i + 1] = strings[i];
         }
         strings[index] = item;
@@ -74,25 +70,20 @@ public class StringListImpl implements StringList, java.io.Serializable {
             throw new IllegalArgumentException("В массиве отсутствует элемент с данным индексом. ");
         }
         strings[index] = item;
-        size++;
         return strings[index];
     }
 
     @Override
     public String remove(String item) {
-        boolean isFinding = false;
         for (int i = 0; i < size; i++) {
             if (strings[i].equals(item)) {
-                for (int j = i; j <= size; j++) {
+                size--;
+                for (int j = i; j < size; j++) {
                     strings[j] = strings[j + 1];
                 }
-                isFinding = true;
-                break;
+                reduce();
+                return item;
             }
-        }
-        if (isFinding) {
-            size--;
-            return item;
         }
         throw new IllegalArgumentException("Элемент с указанным значением не найден.");
     }
@@ -102,10 +93,12 @@ public class StringListImpl implements StringList, java.io.Serializable {
         if (index > size) {
             throw new IllegalArgumentException("В массиве отсутствует элемент с данным индексом. ");
         }
+        size--;
         String item = strings[index];
         for (int i = index; i < size; i++) {
             strings[i] = strings[i + 1];
         }
+        reduce();
         return item;
     }
 
