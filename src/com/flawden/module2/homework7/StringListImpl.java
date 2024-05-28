@@ -11,7 +11,7 @@ public class StringListImpl implements StringList, java.io.Serializable {
     private static final int DEFAULT_CAPACITY = 0;
     private int size = 0;
 
-    transient String[] strings;
+    private transient String[] strings;
 
     public StringListImpl() {
         this.strings = new String[DEFAULT_CAPACITY];
@@ -53,7 +53,7 @@ public class StringListImpl implements StringList, java.io.Serializable {
     @Override
     public String add(int index, String item) {
         if (index > size) {
-            throw new IllegalArgumentException("В массиве отсутствует элемент с данным индексом. ");
+            throw new IllegalArgumentException("В массиве отсутствует элемент с данным индексом.");
         }
         grow();
         for (int i = size - 1; i >= index; i--) {
@@ -66,8 +66,8 @@ public class StringListImpl implements StringList, java.io.Serializable {
 
     @Override
     public String set(int index, String item) {
-        if (index > size) {
-            throw new IllegalArgumentException("В массиве отсутствует элемент с данным индексом. ");
+        if (index >= size) {
+            throw new IllegalArgumentException("В массиве отсутствует элемент с данным индексом.");
         }
         strings[index] = item;
         return strings[index];
@@ -91,7 +91,7 @@ public class StringListImpl implements StringList, java.io.Serializable {
     @Override
     public String remove(int index) {
         if (index > size) {
-            throw new IllegalArgumentException("В массиве отсутствует элемент с данным индексом. ");
+            throw new IllegalArgumentException("В массиве отсутствует элемент с данным индексом.");
         }
         size--;
         String item = strings[index];
